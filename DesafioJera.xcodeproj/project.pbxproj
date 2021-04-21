@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		370301311DD8FAC8C32CF353 /* Pods_DesafioJera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C017C3172D3759BBA8D64B2B /* Pods_DesafioJera.framework */; };
+		767CABE1262FA827005DBE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CABE0262FA827005DBE67 /* AppDelegate.swift */; };
+		767CABE3262FA827005DBE67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CABE2262FA827005DBE67 /* SceneDelegate.swift */; };
+		767CABE5262FA827005DBE67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CABE4262FA827005DBE67 /* ViewController.swift */; };
+		767CABE8262FA827005DBE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767CABE6262FA827005DBE67 /* Main.storyboard */; };
+		767CABEA262FA82A005DBE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767CABE9262FA82A005DBE67 /* Assets.xcassets */; };
+		767CABED262FA82A005DBE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767CABEB262FA82A005DBE67 /* LaunchScreen.storyboard */; };
+		767CABF6262FA8DA005DBE67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 767CABF5262FA8DA005DBE67 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E5CF83A17E820B64A475AFA /* Pods-DesafioJera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJera.release.xcconfig"; path = "Target Support Files/Pods-DesafioJera/Pods-DesafioJera.release.xcconfig"; sourceTree = "<group>"; };
+		767CABDD262FA827005DBE67 /* DesafioJera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioJera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		767CABE0262FA827005DBE67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		767CABE2262FA827005DBE67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		767CABE4262FA827005DBE67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		767CABE7262FA827005DBE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		767CABE9262FA82A005DBE67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		767CABEC262FA82A005DBE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		767CABEE262FA82A005DBE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		767CABF5262FA8DA005DBE67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C017C3172D3759BBA8D64B2B /* Pods_DesafioJera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioJera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F37CF80346854712C321E850 /* Pods-DesafioJera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJera.debug.xcconfig"; path = "Target Support Files/Pods-DesafioJera/Pods-DesafioJera.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		767CABDA262FA827005DBE67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				370301311DD8FAC8C32CF353 /* Pods_DesafioJera.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		51B50A3CB0D4FE430E13A9AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C017C3172D3759BBA8D64B2B /* Pods_DesafioJera.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		767CABD4262FA827005DBE67 = {
+			isa = PBXGroup;
+			children = (
+				767CABDF262FA827005DBE67 /* DesafioJera */,
+				767CABDE262FA827005DBE67 /* Products */,
+				8497C25867462CBB91ECAC0C /* Pods */,
+				51B50A3CB0D4FE430E13A9AD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		767CABDE262FA827005DBE67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				767CABDD262FA827005DBE67 /* DesafioJera.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		767CABDF262FA827005DBE67 /* DesafioJera */ = {
+			isa = PBXGroup;
+			children = (
+				767CABE0262FA827005DBE67 /* AppDelegate.swift */,
+				767CABE2262FA827005DBE67 /* SceneDelegate.swift */,
+				767CABE4262FA827005DBE67 /* ViewController.swift */,
+				767CABE6262FA827005DBE67 /* Main.storyboard */,
+				767CABE9262FA82A005DBE67 /* Assets.xcassets */,
+				767CABEB262FA82A005DBE67 /* LaunchScreen.storyboard */,
+				767CABEE262FA82A005DBE67 /* Info.plist */,
+				767CABF5262FA8DA005DBE67 /* GoogleService-Info.plist */,
+			);
+			path = DesafioJera;
+			sourceTree = "<group>";
+		};
+		8497C25867462CBB91ECAC0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F37CF80346854712C321E850 /* Pods-DesafioJera.debug.xcconfig */,
+				2E5CF83A17E820B64A475AFA /* Pods-DesafioJera.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		767CABDC262FA827005DBE67 /* DesafioJera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 767CABF1262FA82A005DBE67 /* Build configuration list for PBXNativeTarget "DesafioJera" */;
+			buildPhases = (
+				B97A5A2C2C25C81A2AB8FEFD /* [CP] Check Pods Manifest.lock */,
+				767CABD9262FA827005DBE67 /* Sources */,
+				767CABDA262FA827005DBE67 /* Frameworks */,
+				767CABDB262FA827005DBE67 /* Resources */,
+				C5552985030D6DA923EC7E11 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DesafioJera;
+			productName = DesafioJera;
+			productReference = 767CABDD262FA827005DBE67 /* DesafioJera.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		767CABD5262FA827005DBE67 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					767CABDC262FA827005DBE67 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 767CABD8262FA827005DBE67 /* Build configuration list for PBXProject "DesafioJera" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 767CABD4262FA827005DBE67;
+			productRefGroup = 767CABDE262FA827005DBE67 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				767CABDC262FA827005DBE67 /* DesafioJera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		767CABDB262FA827005DBE67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767CABED262FA82A005DBE67 /* LaunchScreen.storyboard in Resources */,
+				767CABF6262FA8DA005DBE67 /* GoogleService-Info.plist in Resources */,
+				767CABEA262FA82A005DBE67 /* Assets.xcassets in Resources */,
+				767CABE8262FA827005DBE67 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B97A5A2C2C25C81A2AB8FEFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioJera-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5552985030D6DA923EC7E11 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioJera/Pods-DesafioJera-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioJera/Pods-DesafioJera-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesafioJera/Pods-DesafioJera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		767CABD9262FA827005DBE67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767CABE5262FA827005DBE67 /* ViewController.swift in Sources */,
+				767CABE1262FA827005DBE67 /* AppDelegate.swift in Sources */,
+				767CABE3262FA827005DBE67 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		767CABE6262FA827005DBE67 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				767CABE7262FA827005DBE67 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		767CABEB262FA82A005DBE67 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				767CABEC262FA82A005DBE67 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		767CABEF262FA82A005DBE67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		767CABF0262FA82A005DBE67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		767CABF2262FA82A005DBE67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F37CF80346854712C321E850 /* Pods-DesafioJera.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75TYB5NUX6;
+				INFOPLIST_FILE = DesafioJera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoallves.DesafioJera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		767CABF3262FA82A005DBE67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E5CF83A17E820B64A475AFA /* Pods-DesafioJera.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75TYB5NUX6;
+				INFOPLIST_FILE = DesafioJera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoallves.DesafioJera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		767CABD8262FA827005DBE67 /* Build configuration list for PBXProject "DesafioJera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767CABEF262FA82A005DBE67 /* Debug */,
+				767CABF0262FA82A005DBE67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		767CABF1262FA82A005DBE67 /* Build configuration list for PBXNativeTarget "DesafioJera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767CABF2262FA82A005DBE67 /* Debug */,
+				767CABF3262FA82A005DBE67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 767CABD5262FA827005DBE67 /* Project object */;
+}
