@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -91,7 +91,6 @@
 				F37CF80346854712C321E850 /* Pods-DesafioJera.debug.xcconfig */,
 				2E5CF83A17E820B64A475AFA /* Pods-DesafioJera.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
