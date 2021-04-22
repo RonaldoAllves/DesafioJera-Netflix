@@ -43,6 +43,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Entrar"/>
+                                <connections>
+                                    <action selector="logar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g3H-It-rxk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8t-Gv-fRx">
                                 <rect key="frame" x="89" y="422" width="197" height="30"/>
@@ -81,6 +84,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="vyC-di-AcA"/>
+                    <connections>
+                        <outlet property="campoEmail" destination="DqR-Sn-Y2T" id="vKl-8x-gpL"/>
+                        <outlet property="campoSenha" destination="pDH-83-1sj" id="ZKm-Z4-ca2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
