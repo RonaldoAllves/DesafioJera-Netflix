@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		370301311DD8FAC8C32CF353 /* Pods_DesafioJera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C017C3172D3759BBA8D64B2B /* Pods_DesafioJera.framework */; };
+		765F1DD426322CF800B9DA51 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765F1DD326322CF800B9DA51 /* LoginViewController.swift */; };
+		765F1DD726322D1C00B9DA51 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765F1DD626322D1C00B9DA51 /* CadastroViewController.swift */; };
 		767CABE1262FA827005DBE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CABE0262FA827005DBE67 /* AppDelegate.swift */; };
 		767CABE3262FA827005DBE67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CABE2262FA827005DBE67 /* SceneDelegate.swift */; };
-		767CABE5262FA827005DBE67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CABE4262FA827005DBE67 /* ViewController.swift */; };
 		767CABE8262FA827005DBE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767CABE6262FA827005DBE67 /* Main.storyboard */; };
 		767CABEA262FA82A005DBE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767CABE9262FA82A005DBE67 /* Assets.xcassets */; };
 		767CABED262FA82A005DBE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767CABEB262FA82A005DBE67 /* LaunchScreen.storyboard */; };
@@ -19,10 +20,11 @@
 
 /* Begin PBXFileReference section */
 		2E5CF83A17E820B64A475AFA /* Pods-DesafioJera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJera.release.xcconfig"; path = "Target Support Files/Pods-DesafioJera/Pods-DesafioJera.release.xcconfig"; sourceTree = "<group>"; };
+		765F1DD326322CF800B9DA51 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		765F1DD626322D1C00B9DA51 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		767CABDD262FA827005DBE67 /* DesafioJera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioJera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		767CABE0262FA827005DBE67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		767CABE2262FA827005DBE67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		767CABE4262FA827005DBE67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		767CABE7262FA827005DBE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		767CABE9262FA82A005DBE67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		767CABEC262FA82A005DBE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +54,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		765F1DD026322C6B00B9DA51 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				765F1DD326322CF800B9DA51 /* LoginViewController.swift */,
+				765F1DD626322D1C00B9DA51 /* CadastroViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		765F1DD126322C7F00B9DA51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		767CABD4262FA827005DBE67 = {
 			isa = PBXGroup;
 			children = (
@@ -73,9 +91,10 @@
 		767CABDF262FA827005DBE67 /* DesafioJera */ = {
 			isa = PBXGroup;
 			children = (
+				765F1DD126322C7F00B9DA51 /* Model */,
+				765F1DD026322C6B00B9DA51 /* ViewController */,
 				767CABE0262FA827005DBE67 /* AppDelegate.swift */,
 				767CABE2262FA827005DBE67 /* SceneDelegate.swift */,
-				767CABE4262FA827005DBE67 /* ViewController.swift */,
 				767CABE6262FA827005DBE67 /* Main.storyboard */,
 				767CABE9262FA82A005DBE67 /* Assets.xcassets */,
 				767CABEB262FA82A005DBE67 /* LaunchScreen.storyboard */,
@@ -209,9 +228,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				767CABE5262FA827005DBE67 /* ViewController.swift in Sources */,
+				765F1DD426322CF800B9DA51 /* LoginViewController.swift in Sources */,
 				767CABE1262FA827005DBE67 /* AppDelegate.swift in Sources */,
 				767CABE3262FA827005DBE67 /* SceneDelegate.swift in Sources */,
+				765F1DD726322D1C00B9DA51 /* CadastroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

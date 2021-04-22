@@ -10,7 +10,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DesafioJera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="DesafioJera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="957.60000000000002" y="53.523238380809602"/>
         </scene>
-        <!--View Controller-->
+        <!--Cadastro View Controller-->
         <scene sceneID="2L8-JP-A13">
             <objects>
-                <viewController id="7CF-I1-en5" sceneMemberID="viewController">
+                <viewController id="7CF-I1-en5" customClass="CadastroViewController" customModule="DesafioJera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bc1-jg-ArS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,6 +131,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Cadastrar"/>
+                                <connections>
+                                    <action selector="cadastrar:" destination="7CF-I1-en5" eventType="touchUpInside" id="IWw-dy-jdn"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ecQ-Ek-74L">
                                 <rect key="frame" x="68.5" y="235" width="238" height="34"/>
@@ -158,6 +161,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="idl-R2-dRJ"/>
+                    <connections>
+                        <outlet property="campoDataNascimento" destination="C8y-yV-smT" id="nRp-Uh-PeG"/>
+                        <outlet property="campoEmail" destination="ecQ-Ek-74L" id="kc5-NC-GAJ"/>
+                        <outlet property="campoNome" destination="jDC-dP-E5w" id="aO3-ba-OHM"/>
+                        <outlet property="campoSenha" destination="Ryv-ZC-3W6" id="rNA-g4-VeF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9AZ-ky-E0D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
