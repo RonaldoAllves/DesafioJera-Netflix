@@ -8,14 +8,17 @@
 import UIKit
 import FirebaseAuth
 import FirebaseStorage
+import FirebaseFirestore
 
 class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var auth: Auth!
     var storage: Storage!
+    var firestore: Firestore!
     var imagePicher = UIImagePickerController()
     var imagemRecuperada: UIImage!
     var tipoImagemModificada: Int!
+    var idUsuario:String!
     
     @IBOutlet weak var campoNomeLogin: UILabel!
     @IBOutlet weak var campoEmailLogin: UILabel!
@@ -38,17 +41,61 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     var arrayTextView: [UIButton]!
+    var arrayNomePerfil: [UITextView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         auth = Auth.auth()
         storage = Storage.storage()
+        firestore = Firestore.firestore()
         
         imagePicher.delegate = self
         
         arrayTextView = [imagemBotaoPerfil1,imagemBotaoPerfil2,imagemBotaoPerfil3,imagemBotaoPerfil4]
+        arrayNomePerfil = [nomePerfil1,nomePerfil2,nomePerfil3,nomePerfil4]
+        
+        
+        if let usuarioLogado = auth.currentUser{
+            self.idUsuario = usuarioLogado.uid
+        }
+        
+        recuperarDadosUsuarioPerfis()
 
+    }
+    
+    func recuperarDadosUsuarioPerfis(){
+        let usuariosRef = self.firestore.collection("usuarios").document(self.idUsuario)
+        usuariosRef.getDocument { (snapshot, erro) in
+            
+            if let dados = snapshot?.data(){
+                self.campoNomeLogin.text = dados["nome"] as! String
+                self.campoEmailLogin.text = dados["email"] as! String
+            }else{
+                print("Erro ao pegar os dados do usuario 50")
+            }
+            
+        }
+        
+        let perfisRef = usuariosRef.collection("Perfis")
+        for var i in 1..<5{
+            print(i)
+            var perfil_i = perfisRef.document("Perfil \(String(i))")
+            perfil_i.getDocument { (snapshotPerfil, erro) in
+                
+                if let dadosPerfil = snapshotPerfil?.data(){
+                    
+                    self.arrayNomePerfil[i-1].text = dadosPerfil["dono"] as! String
+                    //self.nomePerfil1.text = dadosPerfil["dono"] as! String
+                    
+                }else{
+                    print("erro ao pegar perfil \(i)")
+                }
+                
+            }
+        }
+        
+        
     }
     
     
@@ -131,18 +178,22 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
         let imagens = storage.reference().child("imagens")
         
         if let imagemUpload = self.imagemRecuperada.jpegData(compressionQuality: 0.3){
-            
-            if let usuarioLogado = auth.currentUser{
-                let idUsuario = usuarioLogado.uid
                 
                 switch tipoImagemModificada {
                     case 0:
                                         
-                                        imagens.child(idUsuario).child("login.jpg")
-                                            .putData(imagemUpload, metadata: nil) { (metaData, erro) in
+                                        let imagemLoginRef = imagens.child(idUsuario).child("login.jpg")
+                                        imagemLoginRef.putData(imagemUpload, metadata: nil) { (metaData, erro) in
                                                 
                                                 if erro != nil{
                                                     //Criar um alerta para erro ao fazer upload da imagem do usuario
+                                                }else{
+                                                    imagemLoginRef.downloadURL { (url, erro) in
+                                                        if let urlImagem = url?.absoluteString{
+                                                            self.firestore.collection("usuarios").document(self.idUsuario).updateData([
+                                                                                                                                    "urlImagemLogin":urlImagem])
+                                                        }
+                                                    }
                                                 }
                                                 
                                             }
@@ -156,11 +207,19 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
                     default:
                         
                         if let tipo = tipoImagemModificada{
-                            imagens.child(idUsuario).child("Perfil \(String(describing: tipo))").child("perfil\(String(describing: tipo)).jpg")
-                                .putData(imagemUpload, metadata: nil) { (metaData, erro) in
+                            let imagemPerfisRef = imagens.child(idUsuario).child("Perfil \(String(describing: tipo))").child("perfil\(String(describing: tipo)).jpg")
+                            imagemPerfisRef.putData(imagemUpload, metadata: nil) { (metaData, erro) in
                                     
                                     if erro != nil{
                                         //Criar um alerta para erro ao fazer upload da imagem do usuario
+                                    }else{
+                                        imagemPerfisRef.downloadURL { (url, erro) in
+                                            if let urlImagem = url?.absoluteString{
+                                                let perfil = "Perfil \(tipo)"
+                                                self.firestore.collection("usuarios").document(self.idUsuario).collection("Perfis").document(perfil).updateData([
+                                                                                                                        "urlImagemLogin":urlImagem])
+                                            }
+                                        }
                                     }
                                     
                                 }
@@ -171,7 +230,7 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
                      
                 }
                 
-            }
+            
             
             
             

@@ -270,13 +270,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0J0-6d-eX9">
                                         <rect key="frame" x="90" y="29.5" width="253" height="41"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ronaldo Alves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYm-kd-TWQ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYm-kd-TWQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ronaldo@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sw-7M-j09">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sw-7M-j09">
                                                 <rect key="frame" x="0.0" y="20.5" width="253" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -311,7 +311,7 @@
                                                     <action selector="escolherImagemPerfil1:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="yyd-bN-8tf"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Nome do Perfil" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xmI-aj-Fk0">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Perfil 1" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xmI-aj-Fk0">
                                                 <rect key="frame" x="90" y="25" width="158" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -353,7 +353,7 @@
                                                     <action selector="escolherImagemPerfil2:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="t0c-AJ-yeC"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Nome do Perfil" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dW6-v9-z9h">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Perfil 2" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dW6-v9-z9h">
                                                 <rect key="frame" x="90" y="25" width="158" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -395,7 +395,7 @@
                                                     <action selector="escolherImagemPerfil3:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="GZk-MG-kFo"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Nome do Perfil" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uE5-Sx-rt2">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Perfil 3" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uE5-Sx-rt2">
                                                 <rect key="frame" x="90" y="25" width="158" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -437,7 +437,7 @@
                                                     <action selector="escolherImagemPerfil4:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="Fp7-fc-XtJ"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Nome do Perfil" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7My-u1-AFw">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Perfil 4" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7My-u1-AFw">
                                                 <rect key="frame" x="90" y="25" width="158" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>

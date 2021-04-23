@@ -57,10 +57,10 @@ class CadastroViewController: UIViewController {
                                         ])
                                     
                                     //Cria o primeiro perfil do usuario, com nome de Principal
-                                    self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document("Principal").setData(["dono" : nome])
+                                    self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document("Perfil 1").setData(["dono" : nome])
                                     self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document("Perfil 2").setData(["dono" : "sem dono"])
                                     self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document("Perfil 3").setData(["dono" : "sem dono"])
-                                    self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document("Peril 4").setData(["dono" : "sem dono"])
+                                    self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document("Perfil 4").setData(["dono" : "sem dono"])
                                     
                                 }
                                 
