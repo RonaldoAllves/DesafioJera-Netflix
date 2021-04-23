@@ -18,12 +18,26 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         auth = Auth.auth()
+        
+        //Verifica se o usuario esta logado
+        auth.addStateDidChangeListener { (autenticacao, usuario) in
+            if usuario != nil {
+                //Se exister o usuario é porque está logado, entao vai para a tela principal
+                self.performSegue(withIdentifier: "segueLoginAutomatico", sender: nil)
+            }else{
+                
+            }
+        }
 
     }
     
     //Utilizado para esconder a barra de navegacao.
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true) //Esconde a barra de navegação
+    }
+    
+    //usado para voltar para a tela de login de forma rápida
+    @IBAction func unwindToLogin(_ unwindSegue: UIStoryboardSegue) {
     }
     
     @IBAction func logar(_ sender: Any) {
@@ -38,7 +52,7 @@ class LoginViewController: UIViewController {
                             print("Sucesso ao logar usuario:  \(String(describing: usuarioLogado.user.email))")
                         }
                     }else{
-                        print("Erro ao logar usuario!")
+                        print("Erro ao logar usuario!") //Criar alerta
                     }
                 }
                 

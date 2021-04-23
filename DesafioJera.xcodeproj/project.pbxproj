@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		370301311DD8FAC8C32CF353 /* Pods_DesafioJera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C017C3172D3759BBA8D64B2B /* Pods_DesafioJera.framework */; };
+		763C1A5C26326280003B7A64 /* PerfisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C1A5B26326280003B7A64 /* PerfisViewController.swift */; };
 		765F1DD426322CF800B9DA51 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765F1DD326322CF800B9DA51 /* LoginViewController.swift */; };
 		765F1DD726322D1C00B9DA51 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765F1DD626322D1C00B9DA51 /* CadastroViewController.swift */; };
 		767CABE1262FA827005DBE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CABE0262FA827005DBE67 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		2E5CF83A17E820B64A475AFA /* Pods-DesafioJera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJera.release.xcconfig"; path = "Target Support Files/Pods-DesafioJera/Pods-DesafioJera.release.xcconfig"; sourceTree = "<group>"; };
+		763C1A5B26326280003B7A64 /* PerfisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfisViewController.swift; sourceTree = "<group>"; };
 		765F1DD326322CF800B9DA51 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		765F1DD626322D1C00B9DA51 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		767CABDD262FA827005DBE67 /* DesafioJera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioJera.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,9 +56,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		763C1A5A2632623A003B7A64 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				763C1A5B26326280003B7A64 /* PerfisViewController.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
 		765F1DD026322C6B00B9DA51 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				763C1A5A2632623A003B7A64 /* Tabs */,
 				765F1DD326322CF800B9DA51 /* LoginViewController.swift */,
 				765F1DD626322D1C00B9DA51 /* CadastroViewController.swift */,
 			);
@@ -229,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				765F1DD426322CF800B9DA51 /* LoginViewController.swift in Sources */,
+				763C1A5C26326280003B7A64 /* PerfisViewController.swift in Sources */,
 				767CABE1262FA827005DBE67 /* AppDelegate.swift in Sources */,
 				767CABE3262FA827005DBE67 /* SceneDelegate.swift in Sources */,
 				765F1DD726322D1C00B9DA51 /* CadastroViewController.swift in Sources */,
