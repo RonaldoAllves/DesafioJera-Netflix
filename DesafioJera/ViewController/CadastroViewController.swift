@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class CadastroViewController: UIViewController {
 
@@ -15,12 +16,14 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var campoNome: UITextField!
     @IBOutlet weak var campoDataNascimento: UITextField!
     var auth:Auth!
+    var firestore: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         auth = Auth.auth() //objeto que permite realizar a autenticação do usuário utilizando o Firebase
-
+        firestore = Firestore.firestore() //objeto que permite salvar dados no firestore
+        
     }
     
     //Utilizado para mostrar a barra de navegacao.
@@ -38,12 +41,24 @@ class CadastroViewController: UIViewController {
                     if let nascimento = campoDataNascimento.text{
                         
                         //Cria o usuario
-                        auth.createUser(withEmail: email, password: senha) { (usuario, erro) in
+                        auth.createUser(withEmail: email, password: senha) { (dadosResultado, erro) in
                             
                             //Verifica se houve erro ao cadastrar o usuario
                             if erro == nil{
                                 
-                                print("Sucesso ao cadastrar usuario!")
+                                if let idUsuario = dadosResultado?.user.uid {
+                                    
+                                    //Cadastra os dados do usuario pelo uid do usuario
+                                    self.firestore.collection("usuarios").document(idUsuario)
+                                        .setData([
+                                            "nome" : nome,
+                                            "email" : email,
+                                            "dataDeNascimento" : nascimento
+                                        ])
+                                    
+                                    //Cria o primeiro perfil do usuario, com nome de Principal
+                                    self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document("Principal").setData(["dono" : nome])
+                                }
                                 
                             }else{
                                 //Criar um alerta para apresentar o erro ao cadastrar usuario
