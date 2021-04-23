@@ -369,6 +369,7 @@
                         <outlet property="campoEmailLogin" destination="2sw-7M-j09" id="5hq-8I-c2R"/>
                         <outlet property="campoNomeLogin" destination="bYm-kd-TWQ" id="dtB-Yy-f40"/>
                         <outlet property="imagemBotaoLogin" destination="nIb-qM-w4V" id="zWt-sV-J9b"/>
+                        <outlet property="imagemBotaoPerfil1" destination="qoN-i8-ire" id="vBh-AO-XeT"/>
                         <outlet property="nomePerfil1" destination="xmI-aj-Fk0" id="3C1-fb-ryU"/>
                     </connections>
                 </viewController>
