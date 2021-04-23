@@ -24,6 +24,20 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     @IBOutlet weak var nomePerfil1: UITextView!
+    @IBOutlet weak var nomePerfil2: UITextView!
+    @IBOutlet weak var nomePerfil3: UITextView!
+    @IBOutlet weak var nomePerfil4: UITextView!
+    
+
+    
+    
+    @IBOutlet weak var imagemBotaoPerfil1: UIButton!
+    @IBOutlet weak var imagemBotaoPerfil2: UIButton!
+    @IBOutlet weak var imagemBotaoPerfil3: UIButton!
+    @IBOutlet weak var imagemBotaoPerfil4: UIButton!
+    
+    
+    var arrayTextView: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +47,11 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         imagePicher.delegate = self
         
-        
+        arrayTextView = [imagemBotaoPerfil1,imagemBotaoPerfil2,imagemBotaoPerfil3,imagemBotaoPerfil4]
 
     }
     
-    @IBOutlet weak var imagemBotaoPerfil1: UIButton!
+    
     @IBAction func escolherImagemPerfil1(_ sender: Any) {
         
         self.tipoImagemModificada = 1
@@ -46,7 +60,37 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
         present(imagePicher, animated: true, completion: nil)
         
     }
+    
+    @IBAction func escolherImagemPerfil2(_ sender: Any) {
+        
+        self.tipoImagemModificada = 2
+        
+        imagePicher.sourceType = .savedPhotosAlbum
+        present(imagePicher, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func escolherImagemPerfil3(_ sender: Any) {
+        
+        self.tipoImagemModificada = 3
+        
+        imagePicher.sourceType = .savedPhotosAlbum
+        present(imagePicher, animated: true, completion: nil)
+        
+    }
+    @IBAction func escolherImagemPerfil4(_ sender: Any) {
+        
+        self.tipoImagemModificada = 4
+        
+        imagePicher.sourceType = .savedPhotosAlbum
+        present(imagePicher, animated: true, completion: nil)
+        
+    }
+    
+    
     @IBAction func entrarPerfil1(_ sender: Any) {
+        
+        
     }
     
     //Funcao para deslogar o usuario
@@ -110,17 +154,21 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
                         
                         
                     default:
-                        imagens.child(idUsuario).child("Perfil \(String(describing: tipoImagemModificada))").child("perfil\(String(describing: tipoImagemModificada)).jpg")
-                            .putData(imagemUpload, metadata: nil) { (metaData, erro) in
-                                
-                                if erro != nil{
-                                    //Criar um alerta para erro ao fazer upload da imagem do usuario
+                        
+                        if let tipo = tipoImagemModificada{
+                            imagens.child(idUsuario).child("Perfil \(String(describing: tipo))").child("perfil\(String(describing: tipo)).jpg")
+                                .putData(imagemUpload, metadata: nil) { (metaData, erro) in
+                                    
+                                    if erro != nil{
+                                        //Criar um alerta para erro ao fazer upload da imagem do usuario
+                                    }
+                                    
                                 }
-                                
-                            }
-                    
-                
-                        self.imagemBotaoPerfil1.setImage(imagemRecuperada, for: .normal)
+                        
+                            self.arrayTextView[tipo-1].setImage(imagemRecuperada, for: .normal)
+                        }
+                        
+                     
                 }
                 
             }

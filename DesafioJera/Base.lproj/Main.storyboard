@@ -290,7 +290,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lfg-Kh-830">
-                                <rect key="frame" x="37.5" y="180" width="300" height="100"/>
+                                <rect key="frame" x="37.5" y="180" width="300" height="400"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lwv-0O-wA8">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
@@ -334,6 +334,132 @@
                                             <constraint firstAttribute="height" constant="100" id="VIn-k8-QfS"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eJ1-ef-f6w">
+                                        <rect key="frame" x="0.0" y="100" width="300" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ6-kW-zML">
+                                                <rect key="frame" x="0.0" y="10" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="3B2-Dr-66B"/>
+                                                    <constraint firstAttribute="height" constant="80" id="jeI-xV-GOU"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="imagem-perfil"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="escolherImagemPerfil2:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="t0c-AJ-yeC"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Nome do Perfil" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dW6-v9-z9h">
+                                                <rect key="frame" x="90" y="25" width="158" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Xvn-ZW-Uye"/>
+                                                    <constraint firstAttribute="width" constant="158" id="lhm-8A-xlU"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzL-Bb-Kdu">
+                                                <rect key="frame" x="258" y="35" width="42" height="30"/>
+                                                <state key="normal" title="Entrar"/>
+                                                <connections>
+                                                    <action selector="entrarPerfil1:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="boq-Yy-s0o"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="VHN-iE-dj5"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Uj5-G1-xDH">
+                                        <rect key="frame" x="0.0" y="200" width="300" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNx-Lt-6yL">
+                                                <rect key="frame" x="0.0" y="10" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="7Eq-Ek-1Cy"/>
+                                                    <constraint firstAttribute="width" constant="80" id="TBA-48-WEc"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="imagem-perfil"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="escolherImagemPerfil3:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="GZk-MG-kFo"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Nome do Perfil" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uE5-Sx-rt2">
+                                                <rect key="frame" x="90" y="25" width="158" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="UNy-sM-8mZ"/>
+                                                    <constraint firstAttribute="width" constant="158" id="WoA-xr-d0U"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8HA-Qw-aLs">
+                                                <rect key="frame" x="258" y="35" width="42" height="30"/>
+                                                <state key="normal" title="Entrar"/>
+                                                <connections>
+                                                    <action selector="entrarPerfil1:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="73h-yC-uNQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Z8E-R9-C0Z"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FaY-7D-Bb8">
+                                        <rect key="frame" x="0.0" y="300" width="300" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2L-kE-a7t">
+                                                <rect key="frame" x="0.0" y="10" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="NwG-6X-GTk"/>
+                                                    <constraint firstAttribute="height" constant="80" id="S61-eh-Xbi"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="imagem-perfil"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="escolherImagemPerfil4:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="Fp7-fc-XtJ"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Nome do Perfil" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7My-u1-AFw">
+                                                <rect key="frame" x="90" y="25" width="158" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="hZg-ut-6UV"/>
+                                                    <constraint firstAttribute="width" constant="158" id="mE3-oB-cc7"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAd-iF-wgI">
+                                                <rect key="frame" x="258" y="35" width="42" height="30"/>
+                                                <state key="normal" title="Entrar"/>
+                                                <connections>
+                                                    <action selector="entrarPerfil1:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="fhq-8h-G2y"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="1GZ-gM-nwi"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="kHJ-wb-qrM"/>
@@ -370,7 +496,13 @@
                         <outlet property="campoNomeLogin" destination="bYm-kd-TWQ" id="dtB-Yy-f40"/>
                         <outlet property="imagemBotaoLogin" destination="nIb-qM-w4V" id="zWt-sV-J9b"/>
                         <outlet property="imagemBotaoPerfil1" destination="qoN-i8-ire" id="vBh-AO-XeT"/>
+                        <outlet property="imagemBotaoPerfil2" destination="KJ6-kW-zML" id="QoK-IC-XGr"/>
+                        <outlet property="imagemBotaoPerfil3" destination="aNx-Lt-6yL" id="KzX-bd-YTL"/>
+                        <outlet property="imagemBotaoPerfil4" destination="B2L-kE-a7t" id="Ys8-0T-5vW"/>
                         <outlet property="nomePerfil1" destination="xmI-aj-Fk0" id="3C1-fb-ryU"/>
+                        <outlet property="nomePerfil2" destination="dW6-v9-z9h" id="8eh-g3-tHX"/>
+                        <outlet property="nomePerfil3" destination="uE5-Sx-rt2" id="Ye2-k6-sad"/>
+                        <outlet property="nomePerfil4" destination="7My-u1-AFw" id="nJi-Gp-taY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G61-WD-Ac1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
