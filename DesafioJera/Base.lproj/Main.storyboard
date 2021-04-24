@@ -88,7 +88,7 @@
                     <connections>
                         <outlet property="campoEmail" destination="DqR-Sn-Y2T" id="vKl-8x-gpL"/>
                         <outlet property="campoSenha" destination="pDH-83-1sj" id="ZKm-Z4-ca2"/>
-                        <segue destination="y3c-We-1gp" kind="show" identifier="segueLoginAutomatico" id="bOe-1q-ndk"/>
+                        <segue destination="fJc-mZ-hQf" kind="show" identifier="segueLoginAutomatico" id="445-J3-CZX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -195,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3k-YG-tXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3736.8000000000002" y="-532.0839580209896"/>
+            <point key="canvasLocation" x="6890" y="-659"/>
         </scene>
         <!--Sugeridos-->
         <scene sceneID="Dsl-mT-vyq">
@@ -211,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOt-Qg-mHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3736.8000000000002" y="178.56071964017991"/>
+            <point key="canvasLocation" x="6887" y="59"/>
         </scene>
         <!--Procurar Filmes-->
         <scene sceneID="vKh-oF-P5T">
@@ -306,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBe-Qb-P8s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3736.8000000000002" y="904.49775112443785"/>
+            <point key="canvasLocation" x="6887" y="785"/>
         </scene>
         <!--Filmes Assistidos-->
         <scene sceneID="Oja-yu-H0C">
@@ -322,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCJ-L9-qHo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3736.8000000000002" y="1687.1064467766118"/>
+            <point key="canvasLocation" x="6887" y="1567"/>
         </scene>
         <!--Perfis-->
         <scene sceneID="WHp-FE-Wng">
@@ -447,7 +447,7 @@
                                                 <rect key="frame" x="258" y="35" width="42" height="30"/>
                                                 <state key="normal" title="Entrar"/>
                                                 <connections>
-                                                    <action selector="entrarPerfil1:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="boq-Yy-s0o"/>
+                                                    <action selector="entrarPerfil2:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="ax1-Vj-A0b"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -489,7 +489,7 @@
                                                 <rect key="frame" x="258" y="35" width="42" height="30"/>
                                                 <state key="normal" title="Entrar"/>
                                                 <connections>
-                                                    <action selector="entrarPerfil1:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="73h-yC-uNQ"/>
+                                                    <action selector="entrarPerfil3:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="KqO-No-ISo"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -531,7 +531,7 @@
                                                 <rect key="frame" x="258" y="35" width="42" height="30"/>
                                                 <state key="normal" title="Entrar"/>
                                                 <connections>
-                                                    <action selector="entrarPerfil1:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="fhq-8h-G2y"/>
+                                                    <action selector="entrarPerfil4:" destination="0Ad-ao-SLM" eventType="touchUpInside" id="RkK-Kk-3BP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -582,12 +582,13 @@
                         <outlet property="nomePerfil2" destination="dW6-v9-z9h" id="8eh-g3-tHX"/>
                         <outlet property="nomePerfil3" destination="uE5-Sx-rt2" id="Ye2-k6-sad"/>
                         <outlet property="nomePerfil4" destination="7My-u1-AFw" id="nJi-Gp-taY"/>
+                        <segue destination="y3c-We-1gp" kind="show" identifier="segueMenu" id="ktU-Km-N8o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G61-WD-Ac1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Y0r-yC-HMZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3736.8000000000002" y="-1314.6926536731635"/>
+            <point key="canvasLocation" x="3257" y="54"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="O8H-5c-4um">
@@ -600,7 +601,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fJc-mZ-hQf" kind="relationship" relationship="viewControllers" id="O3N-N6-aQD"/>
                         <segue destination="d6j-LM-bGg" kind="relationship" relationship="viewControllers" id="7Tg-oA-cU7"/>
                         <segue destination="F2s-7p-drP" kind="relationship" relationship="viewControllers" id="4aM-wa-EZ4"/>
                         <segue destination="7h4-Bn-pBJ" kind="relationship" relationship="viewControllers" id="oaB-ul-yxk"/>
@@ -609,7 +609,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hw8-ZB-BF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="54"/>
+            <point key="canvasLocation" x="4454" y="54"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5py-6y-doj">
@@ -635,6 +635,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fJc-mZ-hQf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Perfis" image="person" catalog="system" id="JtW-36-JwP"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Kw8-As-VuV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nYH-cd-lVG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -646,7 +647,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVA-GT-pH2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2797.5999999999999" y="-1314.6926536731635"/>
+            <point key="canvasLocation" x="2318" y="54"/>
         </scene>
         <!--Assistir-->
         <scene sceneID="bxK-YN-kqO">
@@ -665,7 +666,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJJ-hA-1Z7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2797.5999999999999" y="-532.0839580209896"/>
+            <point key="canvasLocation" x="5951" y="-660"/>
         </scene>
         <!--Sugerido-->
         <scene sceneID="KB9-6S-4t0">
@@ -684,7 +685,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lG8-oC-8XV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2797.5999999999999" y="178.56071964017991"/>
+            <point key="canvasLocation" x="5948" y="59"/>
         </scene>
         <!--Buscar-->
         <scene sceneID="vF2-RQ-h1r">
@@ -703,7 +704,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9j-l9-hgi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2797.5999999999999" y="904.49775112443785"/>
+            <point key="canvasLocation" x="5948" y="785"/>
         </scene>
         <!--Assistidos-->
         <scene sceneID="6a2-A7-h6p">
@@ -722,7 +723,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="keV-2N-rDL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2797.5999999999999" y="1687.1064467766118"/>
+            <point key="canvasLocation" x="5948" y="1567"/>
         </scene>
     </scenes>
     <resources>

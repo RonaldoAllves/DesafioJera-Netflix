@@ -20,6 +20,7 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
     var imagemRecuperada: UIImage!
     var tipoImagemModificada: Int!
     var idUsuario:String!
+    var perfilSelecionado: Int!
     
     @IBOutlet weak var campoNomeLogin: UILabel!
     @IBOutlet weak var campoEmailLogin: UILabel!
@@ -150,8 +151,21 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     @IBAction func entrarPerfil1(_ sender: Any) {
-        
-        
+        perfilSelecionado = 1
+        performSegue(withIdentifier: "segueMenu", sender: nil)
+    }
+    @IBAction func entrarPerfil2(_ sender: Any) {
+        perfilSelecionado = 2
+        performSegue(withIdentifier: "segueMenu", sender: nil)
+    }
+    
+    @IBAction func entrarPerfil3(_ sender: Any) {
+        perfilSelecionado = 3
+        performSegue(withIdentifier: "segueMenu", sender: nil)
+    }
+    @IBAction func entrarPerfil4(_ sender: Any) {
+        perfilSelecionado = 4
+        performSegue(withIdentifier: "segueMenu", sender: nil)
     }
     
     //Funcao para deslogar o usuario
@@ -249,6 +263,12 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             
         }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
         
     }
 
