@@ -229,7 +229,7 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="518"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RnV-kw-2km">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaProcurarFilmes" id="RnV-kw-2km" customClass="BuscarTableViewCell" customModule="DesafioJera" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RnV-kw-2km" id="aHY-Ow-8ir">
@@ -242,6 +242,11 @@
                                                         <constraint firstAttribute="width" constant="50" id="pXg-lY-PvE"/>
                                                         <constraint firstAttribute="height" constant="48" id="wsE-BM-6XN"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="3rx-gY-cDD">
                                                     <rect key="frame" x="81" y="16" width="268" height="48"/>
@@ -261,6 +266,9 @@
                                                                 <constraint firstAttribute="height" constant="48" id="eyn-RE-n0O"/>
                                                             </constraints>
                                                             <state key="normal" image="stopwatch" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="butaoAssistirMaisTarde:" destination="RnV-kw-2km" eventType="touchUpInside" id="lIt-yZ-DMs"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="723-JG-ds9">
                                                             <rect key="frame" x="241" y="0.0" width="27" height="48"/>
@@ -269,6 +277,9 @@
                                                                 <constraint firstAttribute="width" constant="27" id="XfT-y0-dtD"/>
                                                             </constraints>
                                                             <state key="normal" image="eyeglasses" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="botaoJaAssistido:" destination="RnV-kw-2km" eventType="touchUpInside" id="BMd-8d-1ue"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -286,8 +297,16 @@
                                                 <constraint firstItem="3rx-gY-cDD" firstAttribute="centerY" secondItem="aHY-Ow-8ir" secondAttribute="centerY" id="xRl-xm-9s2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imagemFotoFilme" destination="2AF-9Y-1jQ" id="mBq-Fl-gEy"/>
+                                            <outlet property="textoNomeFilme" destination="MrC-2G-OeJ" id="RnL-og-qVj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="QV1-X1-mPp" id="Yb8-dd-sPx"/>
+                                    <outlet property="delegate" destination="QV1-X1-mPp" id="E8v-1y-VJe"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Su-lF-mrh"/>
@@ -303,6 +322,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Procurar Filmes" id="EtN-oN-4wV"/>
+                    <connections>
+                        <outlet property="tableViewProcurarFilmes" destination="2yH-bP-Lip" id="kBN-A6-rLJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBe-Qb-P8s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

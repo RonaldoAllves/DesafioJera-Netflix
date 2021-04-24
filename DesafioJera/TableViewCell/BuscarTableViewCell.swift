@@ -9,15 +9,14 @@ import UIKit
 
 class BuscarTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var imagemFotoFilme: UIImageView!
+    @IBOutlet weak var textoNomeFilme: UILabel!
+    
+    
+    @IBAction func butaoAssistirMaisTarde(_ sender: Any) {
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBAction func botaoJaAssistido(_ sender: Any) {
     }
-
+    
 }
