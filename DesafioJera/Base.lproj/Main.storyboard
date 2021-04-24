@@ -248,39 +248,19 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="3rx-gY-cDD">
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rx-gY-cDD">
                                                     <rect key="frame" x="81" y="16" width="268" height="48"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrC-2G-OeJ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="114.5" height="48"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="268" height="48"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="48" id="kKc-my-b3y"/>
+                                                                <constraint firstAttribute="width" constant="260" id="veh-tV-zzm"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFs-IK-RTB">
-                                                            <rect key="frame" x="161.5" y="0.0" width="32.5" height="48"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="48" id="eyn-RE-n0O"/>
-                                                            </constraints>
-                                                            <state key="normal" image="stopwatch" catalog="system"/>
-                                                            <connections>
-                                                                <action selector="butaoAssistirMaisTarde:" destination="RnV-kw-2km" eventType="touchUpInside" id="lIt-yZ-DMs"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="723-JG-ds9">
-                                                            <rect key="frame" x="241" y="0.0" width="27" height="48"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="48" id="JFI-oD-yXu"/>
-                                                                <constraint firstAttribute="width" constant="27" id="XfT-y0-dtD"/>
-                                                            </constraints>
-                                                            <state key="normal" image="eyeglasses" catalog="system"/>
-                                                            <connections>
-                                                                <action selector="botaoJaAssistido:" destination="RnV-kw-2km" eventType="touchUpInside" id="BMd-8d-1ue"/>
-                                                            </connections>
-                                                        </button>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -300,6 +280,7 @@
                                         <connections>
                                             <outlet property="imagemFotoFilme" destination="2AF-9Y-1jQ" id="mBq-Fl-gEy"/>
                                             <outlet property="textoNomeFilme" destination="MrC-2G-OeJ" id="RnL-og-qVj"/>
+                                            <segue destination="HxV-df-Akm" kind="show" id="de7-3t-SOb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -323,12 +304,88 @@
                     </view>
                     <navigationItem key="navigationItem" title="Procurar Filmes" id="EtN-oN-4wV"/>
                     <connections>
+                        <outlet property="searchBarProcurarFilmes" destination="qUn-Pn-GOK" id="5NN-Ej-9dY"/>
                         <outlet property="tableViewProcurarFilmes" destination="2yH-bP-Lip" id="kBN-A6-rLJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBe-Qb-P8s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6887" y="785"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MrB-WN-bse">
+            <objects>
+                <viewController id="HxV-df-Akm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Rl-Yf-rHi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wSr-Tr-epI">
+                                <rect key="frame" x="22.5" y="64" width="330" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="330" id="9Hb-JW-TFZ"/>
+                                    <constraint firstAttribute="height" constant="185" id="Tjt-YD-GTg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcj-T1-mnG">
+                                <rect key="frame" x="22.5" y="297.5" width="330" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="bz8-hJ-ebY"/>
+                                </constraints>
+                                <string key="text">Sinopse é uma descrição sintética da ideia do filme. Deve deixar claro o que será abordado no documentário, quem são as personagens e  onde se passa, também pode trazer, sucintamente, por que é importante contar aquela história. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo do Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6O-9C-up2">
+                                <rect key="frame" x="22.5" y="269" width="330" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceG-I5-bas">
+                                <rect key="frame" x="123" y="452.5" width="129" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1PR-AQ-Ctj"/>
+                                    <constraint firstAttribute="width" constant="129" id="8vU-aO-78N"/>
+                                </constraints>
+                                <state key="normal" title="Assistir Mais Tarde"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQp-z9-gf2">
+                                <rect key="frame" x="146.5" y="502.5" width="82" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="ELJ-y6-Cvk"/>
+                                    <constraint firstAttribute="height" constant="30" id="I0e-Oj-GHA"/>
+                                </constraints>
+                                <state key="normal" title="Já Assistido"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nwZ-oD-IFX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V6O-9C-up2" firstAttribute="leading" secondItem="nwZ-oD-IFX" secondAttribute="leading" constant="22.5" id="2rW-Nl-iel"/>
+                            <constraint firstItem="EQp-z9-gf2" firstAttribute="centerX" secondItem="3Rl-Yf-rHi" secondAttribute="centerX" id="3fe-bQ-Ixw"/>
+                            <constraint firstItem="ceG-I5-bas" firstAttribute="top" secondItem="Jcj-T1-mnG" secondAttribute="bottom" constant="15" id="5WQ-zk-QuZ"/>
+                            <constraint firstItem="Jcj-T1-mnG" firstAttribute="top" secondItem="V6O-9C-up2" secondAttribute="bottom" constant="8" id="8a4-da-oif"/>
+                            <constraint firstItem="wSr-Tr-epI" firstAttribute="centerX" secondItem="3Rl-Yf-rHi" secondAttribute="centerX" id="AUK-Jy-8Rg"/>
+                            <constraint firstItem="wSr-Tr-epI" firstAttribute="leading" secondItem="nwZ-oD-IFX" secondAttribute="leading" constant="22.5" id="KnE-H9-Leb"/>
+                            <constraint firstItem="nwZ-oD-IFX" firstAttribute="trailing" secondItem="Jcj-T1-mnG" secondAttribute="trailing" constant="22.5" id="PGV-9X-ifr"/>
+                            <constraint firstItem="Jcj-T1-mnG" firstAttribute="centerX" secondItem="3Rl-Yf-rHi" secondAttribute="centerX" id="PYd-bB-J7f"/>
+                            <constraint firstItem="ceG-I5-bas" firstAttribute="centerX" secondItem="3Rl-Yf-rHi" secondAttribute="centerX" id="Pme-dZ-c6l"/>
+                            <constraint firstItem="wSr-Tr-epI" firstAttribute="top" secondItem="nwZ-oD-IFX" secondAttribute="top" constant="20" id="Zuy-er-eQw"/>
+                            <constraint firstItem="V6O-9C-up2" firstAttribute="top" secondItem="wSr-Tr-epI" secondAttribute="bottom" constant="20" id="fMo-aT-uME"/>
+                            <constraint firstItem="EQp-z9-gf2" firstAttribute="top" secondItem="ceG-I5-bas" secondAttribute="bottom" constant="20" id="hLQ-SV-zBr"/>
+                            <constraint firstItem="nwZ-oD-IFX" firstAttribute="trailing" secondItem="wSr-Tr-epI" secondAttribute="trailing" constant="22.5" id="r3G-ra-sbA"/>
+                            <constraint firstItem="V6O-9C-up2" firstAttribute="centerX" secondItem="3Rl-Yf-rHi" secondAttribute="centerX" id="tvo-7I-uAe"/>
+                            <constraint firstItem="Jcj-T1-mnG" firstAttribute="leading" secondItem="nwZ-oD-IFX" secondAttribute="leading" constant="22.5" id="xAN-ns-Sn2"/>
+                            <constraint firstItem="nwZ-oD-IFX" firstAttribute="trailing" secondItem="V6O-9C-up2" secondAttribute="trailing" constant="22.5" id="zoz-tY-uFT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jfb-WI-4KY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="64t-E8-TP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7748" y="784.85757121439292"/>
         </scene>
         <!--Filmes Assistidos-->
         <scene sceneID="Oja-yu-H0C">
@@ -604,7 +661,7 @@
                         <outlet property="nomePerfil2" destination="dW6-v9-z9h" id="8eh-g3-tHX"/>
                         <outlet property="nomePerfil3" destination="uE5-Sx-rt2" id="Ye2-k6-sad"/>
                         <outlet property="nomePerfil4" destination="7My-u1-AFw" id="nJi-Gp-taY"/>
-                        <segue destination="y3c-We-1gp" kind="show" identifier="segueMenu" id="ktU-Km-N8o"/>
+                        <segue destination="y3c-We-1gp" kind="showDetail" identifier="segueMenu" id="ktU-Km-N8o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G61-WD-Ac1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

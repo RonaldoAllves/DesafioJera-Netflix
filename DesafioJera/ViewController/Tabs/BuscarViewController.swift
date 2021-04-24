@@ -7,23 +7,113 @@
 
 import UIKit
 
-class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     
     @IBOutlet weak var tableViewProcurarFilmes: UITableView!
+    @IBOutlet weak var searchBarProcurarFilmes: UISearchBar!
+    
+    
+    var resultados : Array<Any>!
+    var totalPaginas : Int!
+    var totalFilmes : Int!
+    var totalFilmesArray : Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableViewProcurarFilmes.separatorStyle = .none
+        searchBarProcurarFilmes.delegate = self
         
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        //Recupera na variavel "searchText" o que foi digitado, caracter por caracter
+        
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        var objetoJson : [String:Any]!
+        
+        if let palavraDigitada = searchBar.text{
+            
+            let palavraURI = palavraDigitada.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil) //corrigir para URI
+            //print(palavraDigitada.encode(to: ))
+            
+            /*###################################################*/
+            /*#################### teste ########################*/
+            /*###################################################*/
+            
+            
+            
+                                let url_base = "https://api.themoviedb.org/3/search/movie?"
+                                let key = "f4157bfa5391f523704b9b2054ea3561"
+                                
+                                let atributo_busca = "query="
+                                let atributo_pagina = "&page="
+                                let atributo_key = "&api_key="
+                                
+                                var url_s : String!
+                                
+                                url_s = url_base + atributo_busca + palavraURI + atributo_key + key
+                                
+                                if let url = URL(string: url_s){
+                                    
+                                    let data = NSData(contentsOf: url)
+                                    
+                                    if let dadosRetorno = data{
+                                        do {
+                                            if let objeto = try JSONSerialization.jsonObject(with: dadosRetorno as Data, options: []) as? [String: Any]{
+                                                objetoJson = objeto
+                                            }
+                                            //print(self.totalFilmesBusca())
+                                        } catch  {
+                                            //self.objetoJson = nil
+                                            print("\n\n\tErro na conversao para Json\n\n")
+                                        }
+
+                                    }
+                                    
+                                    
+                                }else{
+                                    print("Erro estranho")
+                                }
+            
+            
+            /*###################################################*/
+            /*#################### Fim teste ####################*/
+            /*###################################################*/
+            
+            //procurarFilme(palavras_chave: palavraDigitada)
+            if objetoJson == nil{
+                print("\n\nErro\n\n")
+            }else{
+                resultados = resultadosBuscaFilmes(objetoJson: objetoJson)
+                totalPaginas = totalPaginasBusca(objetoJson: objetoJson)
+                totalFilmes = totalFilmesBusca(objetoJson: objetoJson)
+                totalFilmesArray = resultados.count
+                
+                self.tableViewProcurarFilmes.reloadData()
+            }
+            
+        }
+        
+        
+    }
+    
+    /*###################################################*/
+    /*################# Listagem Tabela #################*/
+    /*###################################################*/
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        if totalFilmesArray == nil{
+            totalFilmesArray = 0
+        }
+        return totalFilmesArray
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -31,63 +121,21 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let indice = indexPath.row
         
-        celula.textoNomeFilme.text = "nome teste \(indice)"
-        celula.imagemFotoFilme.image = UIImage(named: "imagem-perfil")
+        let filme = resultados[indice] as! [String:Any]
+        let tituloFilme = filme["original_title"]
+        
+        celula.textoNomeFilme.text = tituloFilme as! String
+        celula.imagemFotoFilme.image = obterImagemFilme(filme: filme)
         
         return celula
         
     }
     
     
-    
-    
     /*###################################################*/
     /*#################  Funcoes da API #################*/
     /*###################################################*/
     
-    
-    func procurarFilme(palavras_chave:String, pagina:String? = nil) -> [String: Any]{
-        
-        let url_base = "https://api.themoviedb.org/3/search/movie?"
-        let key = "f4157bfa5391f523704b9b2054ea3561"
-        
-        let atributo_busca = "query="
-        let atributo_pagina = "&page="
-        let atributo_key = "&api_key="
-        
-        let url_s : String!
-        var objetoJson : [String:Any]!
-        
-        if let page = pagina {
-            url_s = url_base + atributo_busca + palavras_chave + atributo_pagina + page + atributo_key + key
-        }else{
-            url_s = url_base + atributo_busca + palavras_chave + atributo_key + key
-        }
-
-        if let url = URL(string: url_s){
-            //Executa a requisicao até receber algum retorno.
-            let tarefa = URLSession.shared.dataTask(with: url) { (dados, requisicao, erro) in
-                if erro == nil{
-                    
-                    if let dadosRetorno = dados{
-                        do {
-                            objetoJson = try JSONSerialization.jsonObject(with: dadosRetorno, options: []) as? [String: Any]
-                        } catch  {
-                            objetoJson = [:]
-                            print("\n\n\tErro na conversao para Json\n\n")
-                        }
-
-                    }
-                }else{
-                    objetoJson = [:]
-                    print("\n\n\tErro na requisicao\n\n")
-                }
-            }
-            //inicia a requisicao
-            tarefa.resume()
-        }
-        return objetoJson
-    }
     
     func resultadosBuscaFilmes(objetoJson : [String:Any]) -> Array<Any>{
         
@@ -98,6 +146,36 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return resultados
         }
         return []
+    }
+    
+    func obterImagemFilme(filme: [String:Any]) -> UIImage?{
+        
+        let url_base = "https://image.tmdb.org/t/p/w500"
+        let nomeImagem = filme["poster_path"] as! String
+        
+        let url_s = url_base + nomeImagem
+        
+        var image: UIImage? = nil
+        
+        if let url = URL(string: url_s){
+            
+            do {
+                //3. Get valid data
+                let data = try Data(contentsOf: url, options: [])
+
+                //4. Make image
+                image = UIImage(data: data)
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+            
+        }else{
+            print("Erro estranho")
+        }
+        
+        return image
+        
     }
     
     func totalFilmesBusca(objetoJson : [String:Any]) -> Int{
