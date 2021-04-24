@@ -152,19 +152,31 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBAction func entrarPerfil1(_ sender: Any) {
         perfilSelecionado = 1
+        
+        self.firestore.collection("usuarios").document(self.idUsuario).collection("Perfis").document("Perfil 1").updateData(["dono" : nomePerfil1.text])
+        
         performSegue(withIdentifier: "segueMenu", sender: nil)
     }
     @IBAction func entrarPerfil2(_ sender: Any) {
         perfilSelecionado = 2
+        
+        self.firestore.collection("usuarios").document(self.idUsuario).collection("Perfis").document("Perfil 2").updateData(["dono" : nomePerfil2.text])
+        
         performSegue(withIdentifier: "segueMenu", sender: nil)
     }
     
     @IBAction func entrarPerfil3(_ sender: Any) {
         perfilSelecionado = 3
+        
+        self.firestore.collection("usuarios").document(self.idUsuario).collection("Perfis").document("Perfil 3").updateData(["dono" : nomePerfil3.text])
+        
         performSegue(withIdentifier: "segueMenu", sender: nil)
     }
     @IBAction func entrarPerfil4(_ sender: Any) {
         perfilSelecionado = 4
+        
+        self.firestore.collection("usuarios").document(self.idUsuario).collection("Perfis").document("Perfil 4").updateData(["dono" : nomePerfil4.text])
+        
         performSegue(withIdentifier: "segueMenu", sender: nil)
     }
     
