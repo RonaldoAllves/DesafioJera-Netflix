@@ -216,7 +216,7 @@
         <!--Procurar Filmes-->
         <scene sceneID="vKh-oF-P5T">
             <objects>
-                <viewController id="QV1-X1-mPp" sceneMemberID="viewController">
+                <viewController id="QV1-X1-mPp" customClass="BuscarViewController" customModule="DesafioJera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DBU-tj-AEu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

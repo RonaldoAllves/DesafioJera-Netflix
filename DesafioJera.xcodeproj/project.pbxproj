@@ -18,6 +18,7 @@
 		767CABEA262FA82A005DBE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767CABE9262FA82A005DBE67 /* Assets.xcassets */; };
 		767CABED262FA82A005DBE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767CABEB262FA82A005DBE67 /* LaunchScreen.storyboard */; };
 		767CABF6262FA8DA005DBE67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 767CABF5262FA8DA005DBE67 /* GoogleService-Info.plist */; };
+		76E256AE26344D09003D6BAC /* BuscarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E256AD26344D09003D6BAC /* BuscarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		767CABEC262FA82A005DBE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		767CABEE262FA82A005DBE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		767CABF5262FA8DA005DBE67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		76E256AD26344D09003D6BAC /* BuscarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarViewController.swift; sourceTree = "<group>"; };
 		C017C3172D3759BBA8D64B2B /* Pods_DesafioJera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioJera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37CF80346854712C321E850 /* Pods-DesafioJera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJera.debug.xcconfig"; path = "Target Support Files/Pods-DesafioJera/Pods-DesafioJera.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				763C1A5B26326280003B7A64 /* PerfisViewController.swift */,
+				76E256AD26344D09003D6BAC /* BuscarViewController.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				766C774326339E7500670FBD /* BuscarTableViewCell.swift in Sources */,
 				763C1A5C26326280003B7A64 /* PerfisViewController.swift in Sources */,
 				767CABE1262FA827005DBE67 /* AppDelegate.swift in Sources */,
+				76E256AE26344D09003D6BAC /* BuscarViewController.swift in Sources */,
 				767CABE3262FA827005DBE67 /* SceneDelegate.swift in Sources */,
 				765F1DD726322D1C00B9DA51 /* CadastroViewController.swift in Sources */,
 			);
