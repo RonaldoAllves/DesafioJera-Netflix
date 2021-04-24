@@ -11,6 +11,7 @@
 		763C1A5C26326280003B7A64 /* PerfisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C1A5B26326280003B7A64 /* PerfisViewController.swift */; };
 		765F1DD426322CF800B9DA51 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765F1DD326322CF800B9DA51 /* LoginViewController.swift */; };
 		765F1DD726322D1C00B9DA51 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765F1DD626322D1C00B9DA51 /* CadastroViewController.swift */; };
+		766C774326339E7500670FBD /* BuscarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766C774226339E7500670FBD /* BuscarTableViewCell.swift */; };
 		767CABE1262FA827005DBE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CABE0262FA827005DBE67 /* AppDelegate.swift */; };
 		767CABE3262FA827005DBE67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CABE2262FA827005DBE67 /* SceneDelegate.swift */; };
 		767CABE8262FA827005DBE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767CABE6262FA827005DBE67 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		763C1A5B26326280003B7A64 /* PerfisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfisViewController.swift; sourceTree = "<group>"; };
 		765F1DD326322CF800B9DA51 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		765F1DD626322D1C00B9DA51 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		766C774226339E7500670FBD /* BuscarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarTableViewCell.swift; sourceTree = "<group>"; };
 		767CABDD262FA827005DBE67 /* DesafioJera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioJera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		767CABE0262FA827005DBE67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		767CABE2262FA827005DBE67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		766C774126339E4C00670FBD /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				766C774226339E7500670FBD /* BuscarTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		767CABD4262FA827005DBE67 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +112,7 @@
 		767CABDF262FA827005DBE67 /* DesafioJera */ = {
 			isa = PBXGroup;
 			children = (
+				766C774126339E4C00670FBD /* TableViewCell */,
 				765F1DD126322C7F00B9DA51 /* Model */,
 				765F1DD026322C6B00B9DA51 /* ViewController */,
 				767CABE0262FA827005DBE67 /* AppDelegate.swift */,
@@ -240,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				765F1DD426322CF800B9DA51 /* LoginViewController.swift in Sources */,
+				766C774326339E7500670FBD /* BuscarTableViewCell.swift in Sources */,
 				763C1A5C26326280003B7A64 /* PerfisViewController.swift in Sources */,
 				767CABE1262FA827005DBE67 /* AppDelegate.swift in Sources */,
 				767CABE3262FA827005DBE67 /* SceneDelegate.swift in Sources */,
