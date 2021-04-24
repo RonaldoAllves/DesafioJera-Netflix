@@ -9,6 +9,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseFirestore
+import FirebaseUI
 
 class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -40,7 +41,7 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imagemBotaoPerfil4: UIButton!
     
     
-    var arrayTextView: [UIButton]!
+    var arrayImagemBotaoPerfis: [UIButton]!
     var arrayNomePerfil: [UITextView]!
     
     override func viewDidLoad() {
@@ -52,16 +53,21 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         imagePicher.delegate = self
         
-        arrayTextView = [imagemBotaoPerfil1,imagemBotaoPerfil2,imagemBotaoPerfil3,imagemBotaoPerfil4]
+        arrayImagemBotaoPerfis = [imagemBotaoPerfil1,imagemBotaoPerfil2,imagemBotaoPerfil3,imagemBotaoPerfil4]
         arrayNomePerfil = [nomePerfil1,nomePerfil2,nomePerfil3,nomePerfil4]
         
         
         if let usuarioLogado = auth.currentUser{
             self.idUsuario = usuarioLogado.uid
+            
+            recuperarDadosUsuarioPerfis()
         }
         
-        recuperarDadosUsuarioPerfis()
+        
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true) //Mostra a barra de navegação
     }
     
     func recuperarDadosUsuarioPerfis(){
@@ -71,6 +77,11 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
             if let dados = snapshot?.data(){
                 self.campoNomeLogin.text = dados["nome"] as! String
                 self.campoEmailLogin.text = dados["email"] as! String
+                
+                if let urlImagemLogin = dados["urlImagemLogin"] as? String{
+                    self.imagemBotaoLogin.sd_setImage(with: URL(string: urlImagemLogin), for: .normal, completed: nil)
+                }
+                
             }else{
                 print("Erro ao pegar os dados do usuario 50")
             }
@@ -79,14 +90,17 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         let perfisRef = usuariosRef.collection("Perfis")
         for var i in 1..<5{
-            print(i)
             var perfil_i = perfisRef.document("Perfil \(String(i))")
             perfil_i.getDocument { (snapshotPerfil, erro) in
                 
                 if let dadosPerfil = snapshotPerfil?.data(){
                     
                     self.arrayNomePerfil[i-1].text = dadosPerfil["dono"] as! String
-                    //self.nomePerfil1.text = dadosPerfil["dono"] as! String
+                    
+                    if let urlImagemPerfil = dadosPerfil["urlImagemPerfil"] as? String{
+                        self.arrayImagemBotaoPerfis[i-1].sd_setImage(with: URL(string: urlImagemPerfil), for: .normal, completed: nil)
+                    }
+                    
                     
                 }else{
                     print("erro ao pegar perfil \(i)")
@@ -217,14 +231,14 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
                                             if let urlImagem = url?.absoluteString{
                                                 let perfil = "Perfil \(tipo)"
                                                 self.firestore.collection("usuarios").document(self.idUsuario).collection("Perfis").document(perfil).updateData([
-                                                                                                                        "urlImagemLogin":urlImagem])
+                                                                                                                        "urlImagemPerfil":urlImagem])
                                             }
                                         }
                                     }
                                     
                                 }
                         
-                            self.arrayTextView[tipo-1].setImage(imagemRecuperada, for: .normal)
+                            self.arrayImagemBotaoPerfis[tipo-1].setImage(imagemRecuperada, for: .normal)
                         }
                         
                      

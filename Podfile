@@ -10,5 +10,6 @@ target 'DesafioJera' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage' 
   pod 'Firebase/Firestore'
+  pod 'FirebaseUI/Storage'
 
 end
