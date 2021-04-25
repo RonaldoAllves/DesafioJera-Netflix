@@ -20,6 +20,8 @@
 		767CABF6262FA8DA005DBE67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 767CABF5262FA8DA005DBE67 /* GoogleService-Info.plist */; };
 		768A9B632634E74C00682627 /* DetalhesFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768A9B622634E74C00682627 /* DetalhesFilmeViewController.swift */; };
 		76E256AE26344D09003D6BAC /* BuscarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E256AD26344D09003D6BAC /* BuscarViewController.swift */; };
+		76F36FE82635B46F009FA88C /* AssistidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F36FE72635B46F009FA88C /* AssistidosViewController.swift */; };
+		76F36FF02635B4FB009FA88C /* FuncoesAPI_Filmes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F36FEF2635B4FB009FA88C /* FuncoesAPI_Filmes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		767CABF5262FA8DA005DBE67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		768A9B622634E74C00682627 /* DetalhesFilmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesFilmeViewController.swift; sourceTree = "<group>"; };
 		76E256AD26344D09003D6BAC /* BuscarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarViewController.swift; sourceTree = "<group>"; };
+		76F36FE72635B46F009FA88C /* AssistidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistidosViewController.swift; sourceTree = "<group>"; };
+		76F36FEF2635B4FB009FA88C /* FuncoesAPI_Filmes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncoesAPI_Filmes.swift; sourceTree = "<group>"; };
 		C017C3172D3759BBA8D64B2B /* Pods_DesafioJera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioJera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37CF80346854712C321E850 /* Pods-DesafioJera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJera.debug.xcconfig"; path = "Target Support Files/Pods-DesafioJera/Pods-DesafioJera.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +71,7 @@
 			children = (
 				763C1A5B26326280003B7A64 /* PerfisViewController.swift */,
 				76E256AD26344D09003D6BAC /* BuscarViewController.swift */,
+				76F36FE72635B46F009FA88C /* AssistidosViewController.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 		767CABDF262FA827005DBE67 /* DesafioJera */ = {
 			isa = PBXGroup;
 			children = (
+				76F36FEA2635B4B5009FA88C /* Funcoes */,
 				766C774126339E4C00670FBD /* TableViewCell */,
 				765F1DD126322C7F00B9DA51 /* Model */,
 				765F1DD026322C6B00B9DA51 /* ViewController */,
@@ -130,6 +136,14 @@
 				767CABF5262FA8DA005DBE67 /* GoogleService-Info.plist */,
 			);
 			path = DesafioJera;
+			sourceTree = "<group>";
+		};
+		76F36FEA2635B4B5009FA88C /* Funcoes */ = {
+			isa = PBXGroup;
+			children = (
+				76F36FEF2635B4FB009FA88C /* FuncoesAPI_Filmes.swift */,
+			);
+			path = Funcoes;
 			sourceTree = "<group>";
 		};
 		8497C25867462CBB91ECAC0C /* Pods */ = {
@@ -258,11 +272,13 @@
 			files = (
 				765F1DD426322CF800B9DA51 /* LoginViewController.swift in Sources */,
 				766C774326339E7500670FBD /* BuscarTableViewCell.swift in Sources */,
+				76F36FF02635B4FB009FA88C /* FuncoesAPI_Filmes.swift in Sources */,
 				763C1A5C26326280003B7A64 /* PerfisViewController.swift in Sources */,
 				767CABE1262FA827005DBE67 /* AppDelegate.swift in Sources */,
 				76E256AE26344D09003D6BAC /* BuscarViewController.swift in Sources */,
 				767CABE3262FA827005DBE67 /* SceneDelegate.swift in Sources */,
 				768A9B632634E74C00682627 /* DetalhesFilmeViewController.swift in Sources */,
+				76F36FE82635B46F009FA88C /* AssistidosViewController.swift in Sources */,
 				765F1DD726322D1C00B9DA51 /* CadastroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
