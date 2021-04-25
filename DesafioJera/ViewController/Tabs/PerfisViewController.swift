@@ -57,6 +57,7 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         if let usuarioLogado = auth.currentUser{
             self.idUsuario = usuarioLogado.uid
+            GlobalVariable.idAtual = idUsuario
             
             recuperarDadosUsuarioPerfis()
         }
@@ -147,6 +148,7 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBAction func entrarPerfil1(_ sender: Any) {
         perfilSelecionado = 1
+        GlobalVariable.perfilAtul = 1
         
         self.firestore.collection("usuarios").document(self.idUsuario).collection("Perfis").document("Perfil 1").updateData(["dono" : nomePerfil1.text as String])
         
@@ -154,6 +156,7 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     @IBAction func entrarPerfil2(_ sender: Any) {
         perfilSelecionado = 2
+        GlobalVariable.perfilAtul = 2
         
         self.firestore.collection("usuarios").document(self.idUsuario).collection("Perfis").document("Perfil 2").updateData(["dono" : nomePerfil2.text as String])
         
@@ -162,6 +165,7 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     @IBAction func entrarPerfil3(_ sender: Any) {
         perfilSelecionado = 3
+        GlobalVariable.perfilAtul = 3
         
         self.firestore.collection("usuarios").document(self.idUsuario).collection("Perfis").document("Perfil 3").updateData(["dono" : nomePerfil3.text as String])
         
@@ -169,6 +173,7 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     @IBAction func entrarPerfil4(_ sender: Any) {
         perfilSelecionado = 4
+        GlobalVariable.perfilAtul = 4
         
         self.firestore.collection("usuarios").document(self.idUsuario).collection("Perfis").document("Perfil 4").updateData(["dono" : nomePerfil4.text as String])
         
@@ -272,13 +277,23 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
+    struct GlobalVariable{
+        static var perfilAtul: Int!
+        static var idAtual: String!
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        /*
         if segue.identifier == "segueMenu" {
             
-            //let vcDestino = segue.destination as
+            if let vcDestinoBuscar = segue.destination as? BuscarViewController{
+                vcDestinoBuscar.perfilAtual = self.perfilSelecionado
+                vcDestinoBuscar.idUsuarioAtual = self.idUsuario
+            }
             
         }
+        */
         
     }
 

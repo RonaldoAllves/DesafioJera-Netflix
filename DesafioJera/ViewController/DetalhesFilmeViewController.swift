@@ -18,6 +18,8 @@ class DetalhesFilmeViewController: UIViewController {
     var nome : String!
     var sinopse : String!
     var imagem : UIImage!
+    var idFilme : Int!
+    
     
     var auth:Auth!
     var firestore: Firestore!
@@ -36,11 +38,32 @@ class DetalhesFilmeViewController: UIViewController {
     }
     
     @IBAction func assistirMaisTarde(_ sender: Any) {
+        
+        if let perfilAtual = PerfisViewController.GlobalVariable.perfilAtul{
+            
+            let idUsuarioAtual = PerfisViewController.GlobalVariable.idAtual as! String
+            
+            let perfil = "Perfil \(String(describing: perfilAtual))"
+            self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([
+                                                                                                                                    "FilmesParaAssistir":FieldValue.arrayUnion([self.idFilme])])
+            //criar aletar infomando que o filme foi adicionado
+            
+        }
+        
     }
     
     @IBAction func jaAssistido(_ sender: Any) {
         
-        
+        if let perfilAtual = PerfisViewController.GlobalVariable.perfilAtul{
+            
+            let idUsuarioAtual = PerfisViewController.GlobalVariable.idAtual as! String
+            
+            let perfil = "Perfil \(String(describing: perfilAtual))"
+            self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([
+                                                                                                                                    "FilmesAssistidos":FieldValue.arrayUnion([self.idFilme])])
+            //Criar alerta informando que o filme foi adicionado
+            
+        }
         
     }
     

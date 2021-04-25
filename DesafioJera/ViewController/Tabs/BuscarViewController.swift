@@ -142,13 +142,9 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 let filme = resultados[indice] as! [String:Any]
                 
-                
-                print("\n\n")
-                //print(filme)
-                //print("\n\n")
-                
                 let viewControllerDestinoDetalhesFilme = segue.destination as! DetalhesFilmeViewController
 
+                viewControllerDestinoDetalhesFilme.idFilme = obterIDFilme(filme: filme)
                 viewControllerDestinoDetalhesFilme.nome = obterNomeFilme(filme: filme)
                 viewControllerDestinoDetalhesFilme.sinopse = obterSinopseFilme(filme: filme)
                 viewControllerDestinoDetalhesFilme.imagem = obterImagemFilme(filme: filme)
@@ -168,6 +164,17 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return resultados
         }
         return []
+    }
+    
+    func obterIDFilme(filme: [String:Any]) -> Int?{
+        
+        if let idFilme = filme["id"]{
+            if let id = idFilme as? Int{
+                return id
+            }
+        }
+        return nil
+        
     }
     
     func obterNomeFilme(filme: [String:Any]) -> String?{
