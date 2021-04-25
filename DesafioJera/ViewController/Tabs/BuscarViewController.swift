@@ -18,9 +18,7 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var totalPaginas : Int!
     var totalFilmes : Int!
     var totalFilmesArray : Int!
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,50 +37,7 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if let palavraDigitada = searchBar.text{
             
-            let palavraURI = palavraDigitada.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil) //corrigir para URI
-            
-            /*###################################################*/
-            /*#################### teste ########################*/
-            /*###################################################*/
-            
-            
-            
-                                let url_base = "https://api.themoviedb.org/3/search/movie?"
-                                let key = "f4157bfa5391f523704b9b2054ea3561"
-                                
-                                let atributo_busca = "query="
-                                let atributo_pagina = "&page="
-                                let atributo_key = "&api_key="
-                                
-                                var url_s : String!
-                                
-                                url_s = url_base + atributo_busca + palavraURI + atributo_key + key
-                                
-                                if let url = URL(string: url_s){
-                                    
-                                    let data = NSData(contentsOf: url)
-                                    
-                                    if let dadosRetorno = data{
-                                        do {
-                                            if let objeto = try JSONSerialization.jsonObject(with: dadosRetorno as Data, options: []) as? [String: Any]{
-                                                objetoJson = objeto
-                                            }
-                                            
-                                        } catch  {
-                                            print("\n\n\tErro na conversao para Json\n\n")
-                                        }
-
-                                    }
-                                    
-                                    
-                                }else{
-                                    print("Erro estranho")
-                                }
-            
-            
-            /*###################################################*/
-            /*#################### Fim teste ####################*/
-            /*###################################################*/
+            objetoJson = self.funcoesAPI.receberObjetoJsonBuscaPorPalavraChaveFilme(palavraDigitada: palavraDigitada)
             
             //procurarFilme(palavras_chave: palavraDigitada)
             if objetoJson == nil{
@@ -97,8 +52,7 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             
         }
-        
-        
+
     }
     
     /*###################################################*/
@@ -119,9 +73,8 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let celula = tableView.dequeueReusableCell(withIdentifier: "celulaProcurarFilmes", for: indexPath) as! BuscarTableViewCell
         
         let indice = indexPath.row
-        
+
         let filme = resultados[indice] as! [String:Any]
-        let tituloFilme = filme["original_title"]
         
         celula.textoNomeFilme.text = self.funcoesAPI.obterNomeFilme(filme: filme)
         

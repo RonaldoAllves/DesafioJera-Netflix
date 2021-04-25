@@ -9,6 +9,47 @@ import UIKit
 
 class FuncoesAPI_Filmes {
     
+    func receberObjetoJsonBuscaPorPalavraChaveFilme(palavraDigitada:String) -> [String:Any]?{
+        
+        var objetoJson : [String:Any]!
+
+        let url_base = "https://api.themoviedb.org/3/search/movie?"
+        let key = "f4157bfa5391f523704b9b2054ea3561"
+        
+        let atributo_busca = "query="
+        let atributo_pagina = "&page="
+        let atributo_key = "&api_key="
+        
+        var url_s : String!
+        
+        let palavraURI = palavraDigitada.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil) //corrigir para URI
+        
+        url_s = url_base + atributo_busca + palavraURI + atributo_key + key
+        
+        if let url = URL(string: url_s){
+            
+            let data = NSData(contentsOf: url)
+            
+            if let dadosRetorno = data{
+                do {
+                    if let objeto = try JSONSerialization.jsonObject(with: dadosRetorno as Data, options: []) as? [String: Any]{
+                        objetoJson = objeto
+                    }
+                    
+                } catch  {
+                    print("\n\n\tErro na conversao para Json\n\n")
+                }
+
+            }
+            
+            
+        }else{
+            print("Erro estranho")
+        }
+    
+        return objetoJson
+    }
+    
     func resultadosBuscaFilmes(objetoJson : [String:Any]) -> Array<Any>{
         
         if let resultados = objetoJson["results"] as? Array<Any>{
