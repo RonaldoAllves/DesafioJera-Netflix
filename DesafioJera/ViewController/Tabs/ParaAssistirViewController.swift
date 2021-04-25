@@ -1,5 +1,5 @@
 //
-//  AssistidosViewController.swift
+//  ParaAssistirViewController.swift
 //  DesafioJera
 //
 //  Created by Ronaldo Allves on 25/04/21.
@@ -11,7 +11,7 @@ import FirebaseStorage
 import FirebaseFirestore
 import FirebaseUI
 
-class AssistidosViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
+class ParaAssistirViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     let funcoes_firebase = Funcoes_Firebase()
     let funcoes_API = FuncoesAPI_Filmes()
@@ -21,21 +21,20 @@ class AssistidosViewController: UIViewController, UITableViewDelegate,UITableVie
     var firestore: Firestore!
     
     var totalFilmes:Int!
-    var filmesAssistidosID_firebase : Array<Int>!
+    var filmesParaAssistirID_firebase : Array<Int>!
     
-    @IBOutlet weak var tableViewAssistidos: UITableView!
+    @IBOutlet weak var tableViewParaAssistir: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         auth = Auth.auth() //objeto que permite realizar a autenticação do usuário utilizando o Firebase
         firestore = Firestore.firestore() //objeto que permite salvar dados no firestore
         
-        self.tableViewAssistidos.separatorStyle = .none
+        self.tableViewParaAssistir.separatorStyle = .none
         
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         let usuariosRef = self.firestore.collection("usuarios").document(PerfisViewController.GlobalVariable.idAtual)
         let perfisRef = usuariosRef.collection("Perfis")
@@ -44,10 +43,10 @@ class AssistidosViewController: UIViewController, UITableViewDelegate,UITableVie
         perfil.getDocument { (snapshotPerfil, erro) in
             if let dadosPerfil = snapshotPerfil?.data(){
                 
-                self.filmesAssistidosID_firebase = dadosPerfil["FilmesAssistidos"] as! Array<Int>
-                self.totalFilmes = self.filmesAssistidosID_firebase.count
+                self.filmesParaAssistirID_firebase = dadosPerfil["FilmesParaAssistir"] as! Array<Int>
+                self.totalFilmes = self.filmesParaAssistirID_firebase.count
                 
-                self.tableViewAssistidos.reloadData()
+                self.tableViewParaAssistir.reloadData()
             }
         }
     }
@@ -63,23 +62,21 @@ class AssistidosViewController: UIViewController, UITableViewDelegate,UITableVie
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let celula = tableView.dequeueReusableCell(withIdentifier: "celulaAssistidos", for: indexPath) as! AssistidosTableViewCell
+        let celula = tableView.dequeueReusableCell(withIdentifier: "celulaParaAssistir", for: indexPath) as! ParaAssistirTableViewCell
         let indice = indexPath.row
         
-        let filme = funcoes_API.buscarFilmePeloID(id: filmesAssistidosID_firebase[indice])
+        let filme = funcoes_API.buscarFilmePeloID(id: filmesParaAssistirID_firebase[indice])
         
         
         let imagem = funcoes_API.obterImagemFilme(filme: filme!)
         let nome = funcoes_API.obterNomeFilme(filme: filme!)
     
-        
-        celula.nomeFilmeAssistido.text = nome
-        celula.imagemFilmeAssistido.image = imagem
+        celula.imagemFilmeParaAssistir.image = imagem
+        celula.nomeFilmeParaAssistir.text = nome
         
         return celula
         
     }
-    
 
 
 }

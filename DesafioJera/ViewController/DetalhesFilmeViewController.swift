@@ -19,6 +19,7 @@ class DetalhesFilmeViewController: UIViewController {
     var sinopse : String!
     var imagem : UIImage!
     var idFilme : Int!
+    var generos : Array<Int>!
     
     
     var auth:Auth!
@@ -59,8 +60,17 @@ class DetalhesFilmeViewController: UIViewController {
             let idUsuarioAtual = PerfisViewController.GlobalVariable.idAtual as! String
             
             let perfil = "Perfil \(String(describing: perfilAtual))"
-            self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([
-                                                                                                                                    "FilmesAssistidos":FieldValue.arrayUnion([self.idFilme])])
+            
+            self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData(["FilmesAssistidos":FieldValue.arrayUnion([idFilme])])
+
+            
+            for genero in generos{
+                self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData(["GenerosDosFilmes":FieldValue.arrayUnion([genero])])
+            }
+            
+            
+            
+            
             //Criar alerta informando que o filme foi adicionado
             
         }

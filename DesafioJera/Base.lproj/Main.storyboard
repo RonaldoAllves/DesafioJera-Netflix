@@ -184,7 +184,7 @@
         <!--Para Assistir-->
         <scene sceneID="aLU-i5-QgY">
             <objects>
-                <viewController id="auk-Ft-yW7" sceneMemberID="viewController">
+                <viewController id="auk-Ft-yW7" customClass="ParaAssistirViewController" customModule="DesafioJera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XxY-Zv-e2G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,7 +197,7 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="518"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="77G-R1-bgy">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaParaAssistir" rowHeight="80" id="77G-R1-bgy" customClass="ParaAssistirTableViewCell" customModule="DesafioJera" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="77G-R1-bgy" id="9L1-jb-qzr">
@@ -210,6 +210,11 @@
                                                         <constraint firstAttribute="height" constant="50" id="PWZ-r1-qSd"/>
                                                         <constraint firstAttribute="width" constant="50" id="WkE-VB-JPJ"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjC-32-WyY">
                                                     <rect key="frame" x="65" y="29.5" width="284" height="21"/>
@@ -226,8 +231,16 @@
                                                 <constraint firstItem="q47-lQ-kt6" firstAttribute="centerY" secondItem="9L1-jb-qzr" secondAttribute="centerY" id="xHs-bN-dJ6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imagemFilmeParaAssistir" destination="q47-lQ-kt6" id="efy-Ce-McA"/>
+                                            <outlet property="nomeFilmeParaAssistir" destination="EjC-32-WyY" id="llJ-gc-odk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="auk-Ft-yW7" id="lJe-DX-c7B"/>
+                                    <outlet property="delegate" destination="auk-Ft-yW7" id="1ES-20-m6z"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="x8R-WS-eSQ"/>
@@ -243,6 +256,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Para Assistir" id="fHH-sb-IdJ"/>
+                    <connections>
+                        <outlet property="tableViewParaAssistir" destination="Klk-DH-VCC" id="LkQ-mr-Tit"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3k-YG-tXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -503,7 +519,7 @@
         <!--Filmes Assistidos-->
         <scene sceneID="Oja-yu-H0C">
             <objects>
-                <viewController id="qYU-BK-RDJ" sceneMemberID="viewController">
+                <viewController id="qYU-BK-RDJ" customClass="AssistidosViewController" customModule="DesafioJera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d8L-DX-PFT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -512,11 +528,11 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gyg-q9-YeX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gyg-q9-YeX">
                                 <rect key="frame" x="0.0" y="100" width="375" height="518"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="8Po-97-shN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaAssistidos" id="8Po-97-shN" customClass="AssistidosTableViewCell" customModule="DesafioJera" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Po-97-shN" id="idS-9z-ek2">
@@ -550,8 +566,16 @@
                                                 <constraint firstItem="nKE-sl-gdI" firstAttribute="centerY" secondItem="idS-9z-ek2" secondAttribute="centerY" id="hgP-rY-egq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imagemFilmeAssistido" destination="K9N-nh-vWI" id="ZNg-ky-FRm"/>
+                                            <outlet property="nomeFilmeAssistido" destination="nKE-sl-gdI" id="j7r-re-cwn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qYU-BK-RDJ" id="2KW-MM-CHk"/>
+                                    <outlet property="delegate" destination="qYU-BK-RDJ" id="qX9-1K-7bh"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xeo-Z7-x9S"/>
@@ -567,10 +591,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Filmes Assistidos" id="opL-6v-J9A"/>
+                    <connections>
+                        <outlet property="tableViewAssistidos" destination="gyg-q9-YeX" id="CJT-QZ-tCm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCJ-L9-qHo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6885.6000000000004" y="1566.5667166416792"/>
+            <point key="canvasLocation" x="6886" y="-1423"/>
         </scene>
         <!--Perfis-->
         <scene sceneID="WHp-FE-Wng">
@@ -971,7 +998,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="keV-2N-rDL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5948" y="1567"/>
+            <point key="canvasLocation" x="5950" y="-1422"/>
         </scene>
     </scenes>
     <resources>

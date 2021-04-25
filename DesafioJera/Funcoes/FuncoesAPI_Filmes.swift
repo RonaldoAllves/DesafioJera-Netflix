@@ -9,12 +9,13 @@ import UIKit
 
 class FuncoesAPI_Filmes {
     
+    let key = "f4157bfa5391f523704b9b2054ea3561"
+    
     func receberObjetoJsonBuscaPorPalavraChaveFilme(palavraDigitada:String) -> [String:Any]?{
         
         var objetoJson : [String:Any]!
 
         let url_base = "https://api.themoviedb.org/3/search/movie?"
-        let key = "f4157bfa5391f523704b9b2054ea3561"
         
         let atributo_busca = "query="
         let atributo_pagina = "&page="
@@ -48,6 +49,40 @@ class FuncoesAPI_Filmes {
         }
     
         return objetoJson
+    }
+    
+    func buscarFilmePeloID(id:Int) -> [String:Any]?{
+        var filme:[String:Any]!
+        
+        let url_base = "https://api.themoviedb.org/3/movie/"
+        
+        let id_s = String(id)
+        
+        let url_s = url_base + id_s + "?api_key=" + key
+        
+        //print(url_s)
+        
+        if let url = URL(string: url_s){
+            
+            let data = NSData(contentsOf: url)
+            
+            if let dadosRetorno = data{
+                do {
+                    if let objeto = try JSONSerialization.jsonObject(with: dadosRetorno as Data, options: []) as? [String: Any]{
+                        filme = objeto
+                    }
+                    
+                } catch  {
+                    print("\n\n\tErro na conversao para Json\n\n")
+                }
+
+            }
+
+        }else{
+            print("Erro estranho")
+        }
+        
+        return filme
     }
     
     func resultadosBuscaFilmes(objetoJson : [String:Any]) -> Array<Any>{
@@ -91,6 +126,17 @@ class FuncoesAPI_Filmes {
         
     }
     
+    func obterGeneroFilme(filme: [String:Any]) -> Array<Int>?{
+        
+        if let genero = filme["genre_ids"]{
+            if let generoArray = genero as? Array<Int>{
+                return generoArray
+            }
+        }
+        return nil
+        
+    }
+    
     func obterImagemFilme(filme: [String:Any]) -> UIImage?{
         
         let url_base = "https://image.tmdb.org/t/p/w500"
@@ -120,7 +166,6 @@ class FuncoesAPI_Filmes {
                 catch {
                     print(error.localizedDescription)
                 }
-                
             }else{
                 print("Erro estranho")
             }

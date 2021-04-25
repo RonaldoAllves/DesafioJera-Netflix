@@ -71,13 +71,11 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let celula = tableView.dequeueReusableCell(withIdentifier: "celulaProcurarFilmes", for: indexPath) as! BuscarTableViewCell
-        
         let indice = indexPath.row
 
         let filme = resultados[indice] as! [String:Any]
         
         celula.textoNomeFilme.text = self.funcoesAPI.obterNomeFilme(filme: filme)
-        
         if let imagem = self.funcoesAPI.obterImagemFilme(filme: filme){
             celula.imagemFotoFilme.image = imagem
         }
@@ -103,6 +101,7 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 viewControllerDestinoDetalhesFilme.nome = self.funcoesAPI.obterNomeFilme(filme: filme)
                 viewControllerDestinoDetalhesFilme.sinopse = self.funcoesAPI.obterSinopseFilme(filme: filme)
                 viewControllerDestinoDetalhesFilme.imagem = self.funcoesAPI.obterImagemFilme(filme: filme)
+                viewControllerDestinoDetalhesFilme.generos = self.funcoesAPI.obterGeneroFilme(filme: filme)
             }
             
         }
