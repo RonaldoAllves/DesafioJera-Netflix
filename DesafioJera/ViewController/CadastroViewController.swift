@@ -57,10 +57,18 @@ class CadastroViewController: UIViewController {
                                         ])
                                     
                                     //Cria o primeiro perfil do usuario, com nome de Principal
-                                    self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document("Perfil 1").setData(["dono" : nome])
-                                    self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document("Perfil 2").setData(["dono" : "sem dono"])
-                                    self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document("Perfil 3").setData(["dono" : "sem dono"])
-                                    self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document("Perfil 4").setData(["dono" : "sem dono"])
+                                    for var i in 1..<5{
+                                        var numeroPerfil = "Perfil \(String(i))"
+                                        
+                                        
+                                        self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["FilmesAssistidos" : Array<Any>()], merge: true)
+                                        self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["FilmesParaAssistir" : Array<Any>()], merge: true)
+                                
+                                        self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["dono" : "sem dono"], merge: true)
+                                        
+                                        
+                                    }
+                                    
                                     
                                 }
                                 

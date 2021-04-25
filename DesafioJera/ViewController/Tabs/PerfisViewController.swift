@@ -27,13 +27,10 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imagemBotaoLogin: UIButton!
     
     
-    
     @IBOutlet weak var nomePerfil1: UITextView!
     @IBOutlet weak var nomePerfil2: UITextView!
     @IBOutlet weak var nomePerfil3: UITextView!
     @IBOutlet weak var nomePerfil4: UITextView!
-    
-
     
     
     @IBOutlet weak var imagemBotaoPerfil1: UIButton!
@@ -63,8 +60,6 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             recuperarDadosUsuarioPerfis()
         }
-        
-        
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -222,25 +217,24 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
                 switch tipoImagemModificada {
                     case 0:
                                         
-                                        let imagemLoginRef = imagens.child(idUsuario).child("login.jpg")
-                                        imagemLoginRef.putData(imagemUpload, metadata: nil) { (metaData, erro) in
-                                                
-                                                if erro != nil{
-                                                    //Criar um alerta para erro ao fazer upload da imagem do usuario
-                                                }else{
-                                                    imagemLoginRef.downloadURL { (url, erro) in
-                                                        if let urlImagem = url?.absoluteString{
-                                                            self.firestore.collection("usuarios").document(self.idUsuario).updateData([
-                                                                                                                                    "urlImagemLogin":urlImagem])
-                                                        }
-                                                    }
-                                                }
-                                                
-                                            }
-                                    
+                        let imagemLoginRef = imagens.child(idUsuario).child("login.jpg")
+                        imagemLoginRef.putData(imagemUpload, metadata: nil) { (metaData, erro) in
                                 
+                                if erro != nil{
+                                    //Criar um alerta para erro ao fazer upload da imagem do usuario
+                                }else{
+                                    imagemLoginRef.downloadURL { (url, erro) in
+                                        if let urlImagem = url?.absoluteString{
+                                            self.firestore.collection("usuarios").document(self.idUsuario).updateData(["urlImagemLogin":urlImagem])
+                                        }
+                                    }
+                                }
                                 
-                                        self.imagemBotaoLogin.setImage(imagemRecuperada, for: .normal)
+                            }
+                    
+                
+                
+                        self.imagemBotaoLogin.setImage(imagemRecuperada, for: .normal)
                         
                         
                         

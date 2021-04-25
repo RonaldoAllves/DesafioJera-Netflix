@@ -280,7 +280,7 @@
                                         <connections>
                                             <outlet property="imagemFotoFilme" destination="2AF-9Y-1jQ" id="mBq-Fl-gEy"/>
                                             <outlet property="textoNomeFilme" destination="MrC-2G-OeJ" id="RnL-og-qVj"/>
-                                            <segue destination="HxV-df-Akm" kind="show" id="de7-3t-SOb"/>
+                                            <segue destination="HxV-df-Akm" kind="show" identifier="segueDetalhesFilme" id="de7-3t-SOb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -312,10 +312,10 @@
             </objects>
             <point key="canvasLocation" x="6887" y="785"/>
         </scene>
-        <!--View Controller-->
+        <!--Detalhes Filme View Controller-->
         <scene sceneID="MrB-WN-bse">
             <objects>
-                <viewController id="HxV-df-Akm" sceneMemberID="viewController">
+                <viewController id="HxV-df-Akm" customClass="DetalhesFilmeViewController" customModule="DesafioJera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Rl-Yf-rHi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -350,6 +350,9 @@
                                     <constraint firstAttribute="width" constant="129" id="8vU-aO-78N"/>
                                 </constraints>
                                 <state key="normal" title="Assistir Mais Tarde"/>
+                                <connections>
+                                    <action selector="assistirMaisTarde:" destination="HxV-df-Akm" eventType="touchUpInside" id="YbL-ai-dEh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQp-z9-gf2">
                                 <rect key="frame" x="146.5" y="502.5" width="82" height="30"/>
@@ -358,6 +361,9 @@
                                     <constraint firstAttribute="height" constant="30" id="I0e-Oj-GHA"/>
                                 </constraints>
                                 <state key="normal" title="Já Assistido"/>
+                                <connections>
+                                    <action selector="jaAssistido:" destination="HxV-df-Akm" eventType="touchUpInside" id="ZzL-7a-usb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nwZ-oD-IFX"/>
@@ -382,6 +388,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jfb-WI-4KY"/>
+                    <connections>
+                        <outlet property="imagemFilme" destination="wSr-Tr-epI" id="E0z-ed-Vuw"/>
+                        <outlet property="sinopseFilme" destination="Jcj-T1-mnG" id="DNY-VS-Qe0"/>
+                        <outlet property="tituloFilme" destination="V6O-9C-up2" id="GXT-Ww-g0e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64t-E8-TP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

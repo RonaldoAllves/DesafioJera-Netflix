@@ -27,11 +27,10 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        //Recupera na variavel "searchText" o que foi digitado, caracter por caracter
-        
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true) //Mostra a barra de navegação
     }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         var objetoJson : [String:Any]!
@@ -39,7 +38,6 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let palavraDigitada = searchBar.text{
             
             let palavraURI = palavraDigitada.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil) //corrigir para URI
-            //print(palavraDigitada.encode(to: ))
             
             /*###################################################*/
             /*#################### teste ########################*/
@@ -67,9 +65,8 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                             if let objeto = try JSONSerialization.jsonObject(with: dadosRetorno as Data, options: []) as? [String: Any]{
                                                 objetoJson = objeto
                                             }
-                                            //print(self.totalFilmesBusca())
+                                            
                                         } catch  {
-                                            //self.objetoJson = nil
                                             print("\n\n\tErro na conversao para Json\n\n")
                                         }
 
@@ -124,13 +121,41 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let filme = resultados[indice] as! [String:Any]
         let tituloFilme = filme["original_title"]
         
-        celula.textoNomeFilme.text = tituloFilme as! String
-        celula.imagemFotoFilme.image = obterImagemFilme(filme: filme)
+        celula.textoNomeFilme.text = obterNomeFilme(filme: filme)
+        
+        if let imagem = obterImagemFilme(filme: filme){
+            celula.imagemFotoFilme.image = imagem
+        }
         
         return celula
         
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "segueDetalhesFilme"{
+            
+            if let indexPath = tableViewProcurarFilmes.indexPathForSelectedRow{
+                
+                let indice = indexPath.row
+                
+                let filme = resultados[indice] as! [String:Any]
+                
+                
+                print("\n\n")
+                //print(filme)
+                //print("\n\n")
+                
+                let viewControllerDestinoDetalhesFilme = segue.destination as! DetalhesFilmeViewController
+
+                viewControllerDestinoDetalhesFilme.nome = obterNomeFilme(filme: filme)
+                viewControllerDestinoDetalhesFilme.sinopse = obterSinopseFilme(filme: filme)
+                viewControllerDestinoDetalhesFilme.imagem = obterImagemFilme(filme: filme)
+            }
+            
+        }
+    }
     
     /*###################################################*/
     /*#################  Funcoes da API #################*/
@@ -140,38 +165,66 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func resultadosBuscaFilmes(objetoJson : [String:Any]) -> Array<Any>{
         
         if let resultados = objetoJson["results"] as? Array<Any>{
-            //print(resultados[0])
-            //let resultado1 = resultados[0] as? [String: Any]
-            //print(resultado1?["id"])
             return resultados
         }
         return []
     }
     
+    func obterNomeFilme(filme: [String:Any]) -> String?{
+        
+        if let nomeFilme = filme["original_title"]{
+            if let nome = nomeFilme as? String{
+                return nome
+            }
+        }
+        return nil
+        
+    }
+    
+    func obterSinopseFilme(filme: [String:Any]) -> String?{
+        
+        if let sinopse = filme["overview"]{
+            if let sinopseString = sinopse as? String{
+                return sinopseString
+            }
+        }
+        return nil
+        
+    }
+    
     func obterImagemFilme(filme: [String:Any]) -> UIImage?{
         
         let url_base = "https://image.tmdb.org/t/p/w500"
-        let nomeImagem = filme["poster_path"] as! String
-        
-        let url_s = url_base + nomeImagem
-        
+        var nomeImagem : String!
         var image: UIImage? = nil
         
-        if let url = URL(string: url_s){
-            
-            do {
-                //3. Get valid data
-                let data = try Data(contentsOf: url, options: [])
-
-                //4. Make image
-                image = UIImage(data: data)
-            }
-            catch {
-                print(error.localizedDescription)
-            }
-            
+        if let nome = filme["poster_path"] as? String{
+            nomeImagem = nome
         }else{
-            print("Erro estranho")
+            if let nome2 = filme["backdrop_path"] as? String{
+                nomeImagem = nome2
+            }
+        }
+    
+        if nomeImagem != nil{
+            let url_s = url_base + nomeImagem
+            
+            if let url = URL(string: url_s){
+                
+                do {
+                    //3. Get valid data
+                    let data = try Data(contentsOf: url, options: [])
+
+                    //4. Make image
+                    image = UIImage(data: data)
+                }
+                catch {
+                    print(error.localizedDescription)
+                }
+                
+            }else{
+                print("Erro estranho")
+            }
         }
         
         return image
@@ -187,7 +240,6 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func totalPaginasBusca(objetoJson : [String:Any]) -> Int{
         if let total_pages = objetoJson["total_pages"]{
             return total_pages as! Int
-            //print(total_pages)
         }
         return -1
     }
