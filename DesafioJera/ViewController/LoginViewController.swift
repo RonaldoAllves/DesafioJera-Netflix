@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
 
@@ -16,6 +17,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Botao do facebook
+        let loginButton = FBLoginButton()
+        loginButton.center = view.center
+        view.addSubview(loginButton)
+        //
         
         auth = Auth.auth()
         
@@ -67,3 +74,8 @@ class LoginViewController: UIViewController {
     
 
 }
+
+
+//##########
+
+
