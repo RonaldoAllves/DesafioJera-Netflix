@@ -67,6 +67,9 @@
                                     <constraint firstAttribute="height" constant="30" id="ifE-TX-5Oq"/>
                                 </constraints>
                                 <state key="normal" title="Login com Facebook"/>
+                                <connections>
+                                    <action selector="loginFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I9c-y1-xs4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
