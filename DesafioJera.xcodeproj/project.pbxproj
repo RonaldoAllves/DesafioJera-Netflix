@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		370301311DD8FAC8C32CF353 /* Pods_DesafioJera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C017C3172D3759BBA8D64B2B /* Pods_DesafioJera.framework */; };
+		7609F1E62636442A00D534C5 /* SugeridosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609F1E52636442900D534C5 /* SugeridosTableViewCell.swift */; };
 		763C1A5C26326280003B7A64 /* PerfisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C1A5B26326280003B7A64 /* PerfisViewController.swift */; };
 		765F1DD426322CF800B9DA51 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765F1DD326322CF800B9DA51 /* LoginViewController.swift */; };
 		765F1DD726322D1C00B9DA51 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765F1DD626322D1C00B9DA51 /* CadastroViewController.swift */; };
@@ -26,10 +27,12 @@
 		76F36FF92635E5F2009FA88C /* AssistidosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F36FF82635E5F2009FA88C /* AssistidosTableViewCell.swift */; };
 		76F36FFD2635FF15009FA88C /* ParaAssistirTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F36FFC2635FF15009FA88C /* ParaAssistirTableViewCell.swift */; };
 		76F3700026360038009FA88C /* ParaAssistirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F36FFF26360038009FA88C /* ParaAssistirViewController.swift */; };
+		76F370032636244D009FA88C /* SugeridosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F370022636244D009FA88C /* SugeridosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E5CF83A17E820B64A475AFA /* Pods-DesafioJera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJera.release.xcconfig"; path = "Target Support Files/Pods-DesafioJera/Pods-DesafioJera.release.xcconfig"; sourceTree = "<group>"; };
+		7609F1E52636442900D534C5 /* SugeridosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugeridosTableViewCell.swift; sourceTree = "<group>"; };
 		763C1A5B26326280003B7A64 /* PerfisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfisViewController.swift; sourceTree = "<group>"; };
 		765F1DD326322CF800B9DA51 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		765F1DD626322D1C00B9DA51 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		76F36FF82635E5F2009FA88C /* AssistidosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistidosTableViewCell.swift; sourceTree = "<group>"; };
 		76F36FFC2635FF15009FA88C /* ParaAssistirTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParaAssistirTableViewCell.swift; sourceTree = "<group>"; };
 		76F36FFF26360038009FA88C /* ParaAssistirViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParaAssistirViewController.swift; sourceTree = "<group>"; };
+		76F370022636244D009FA88C /* SugeridosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugeridosViewController.swift; sourceTree = "<group>"; };
 		C017C3172D3759BBA8D64B2B /* Pods_DesafioJera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioJera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37CF80346854712C321E850 /* Pods-DesafioJera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJera.debug.xcconfig"; path = "Target Support Files/Pods-DesafioJera/Pods-DesafioJera.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +85,7 @@
 				76E256AD26344D09003D6BAC /* BuscarViewController.swift */,
 				76F36FE72635B46F009FA88C /* AssistidosViewController.swift */,
 				76F36FFF26360038009FA88C /* ParaAssistirViewController.swift */,
+				76F370022636244D009FA88C /* SugeridosViewController.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 				766C774226339E7500670FBD /* BuscarTableViewCell.swift */,
 				76F36FF82635E5F2009FA88C /* AssistidosTableViewCell.swift */,
 				76F36FFC2635FF15009FA88C /* ParaAssistirTableViewCell.swift */,
+				7609F1E52636442900D534C5 /* SugeridosTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -291,11 +297,13 @@
 				76F36FF92635E5F2009FA88C /* AssistidosTableViewCell.swift in Sources */,
 				76F36FFD2635FF15009FA88C /* ParaAssistirTableViewCell.swift in Sources */,
 				76F3700026360038009FA88C /* ParaAssistirViewController.swift in Sources */,
+				76F370032636244D009FA88C /* SugeridosViewController.swift in Sources */,
 				76E256AE26344D09003D6BAC /* BuscarViewController.swift in Sources */,
 				767CABE3262FA827005DBE67 /* SceneDelegate.swift in Sources */,
 				768A9B632634E74C00682627 /* DetalhesFilmeViewController.swift in Sources */,
 				76F36FE82635B46F009FA88C /* AssistidosViewController.swift in Sources */,
 				765F1DD726322D1C00B9DA51 /* CadastroViewController.swift in Sources */,
+				7609F1E62636442A00D534C5 /* SugeridosTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

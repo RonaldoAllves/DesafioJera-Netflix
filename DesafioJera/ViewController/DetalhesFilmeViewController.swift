@@ -47,6 +47,12 @@ class DetalhesFilmeViewController: UIViewController {
             let perfil = "Perfil \(String(describing: perfilAtual))"
             self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([
                                                                                                                                     "FilmesParaAssistir":FieldValue.arrayUnion([self.idFilme])])
+            
+            for genero in generos{
+                let campo = "GenerosDosFilmes." + String(genero)
+                self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([campo : FieldValue.increment(Int64(1))])
+            }
+            
             //criar aletar infomando que o filme foi adicionado
             
         }
@@ -65,12 +71,9 @@ class DetalhesFilmeViewController: UIViewController {
 
             
             for genero in generos{
-                self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData(["GenerosDosFilmes":FieldValue.arrayUnion([genero])])
+                let campo = "GenerosDosFilmes." + String(genero)
+                self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([campo : FieldValue.increment(Int64(1))])
             }
-            
-            
-            
-            
             //Criar alerta informando que o filme foi adicionado
             
         }

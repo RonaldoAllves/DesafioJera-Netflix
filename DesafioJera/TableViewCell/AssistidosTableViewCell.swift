@@ -12,5 +12,4 @@ class AssistidosTableViewCell: UITableViewCell {
     @IBOutlet weak var imagemFilmeAssistido: UIImageView!
     @IBOutlet weak var nomeFilmeAssistido: UILabel!
     
-
 }

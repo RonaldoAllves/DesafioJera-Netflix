@@ -205,7 +205,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q47-lQ-kt6">
-                                                    <rect key="frame" x="10" y="15" width="50" height="50"/>
+                                                    <rect key="frame" x="10" y="5" width="50" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="PWZ-r1-qSd"/>
                                                         <constraint firstAttribute="width" constant="50" id="WkE-VB-JPJ"/>
@@ -224,7 +224,9 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="q47-lQ-kt6" secondAttribute="bottom" constant="5" id="BbF-2h-aJf"/>
                                                 <constraint firstItem="EjC-32-WyY" firstAttribute="centerY" secondItem="9L1-jb-qzr" secondAttribute="centerY" id="F9z-dj-d0w"/>
+                                                <constraint firstItem="q47-lQ-kt6" firstAttribute="top" secondItem="9L1-jb-qzr" secondAttribute="top" constant="5" id="MCv-At-HPF"/>
                                                 <constraint firstItem="EjC-32-WyY" firstAttribute="leading" secondItem="q47-lQ-kt6" secondAttribute="trailing" constant="5" id="dwk-aR-SJg"/>
                                                 <constraint firstItem="q47-lQ-kt6" firstAttribute="leading" secondItem="9L1-jb-qzr" secondAttribute="leading" constant="10" id="fdi-i8-nHk"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="EjC-32-WyY" secondAttribute="trailing" constant="10" id="gbR-JI-56I"/>
@@ -267,7 +269,7 @@
         <!--Sugeridos-->
         <scene sceneID="Dsl-mT-vyq">
             <objects>
-                <viewController id="GMo-XU-NsP" sceneMemberID="viewController">
+                <viewController id="GMo-XU-NsP" customClass="SugeridosViewController" customModule="DesafioJera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nD7-C7-XX0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,7 +282,7 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="518"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="yVm-Nz-sRz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaSugeridos" rowHeight="80" id="yVm-Nz-sRz" customClass="SugeridosTableViewCell" customModule="DesafioJera" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yVm-Nz-sRz" id="cgb-d0-GYf">
@@ -288,11 +290,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Js-jP-A1T">
-                                                    <rect key="frame" x="10" y="15" width="50" height="50"/>
+                                                    <rect key="frame" x="10" y="5" width="50" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="vJ0-OB-Fw7"/>
                                                         <constraint firstAttribute="width" constant="50" id="vqH-oj-PYl"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hf-WE-tt2">
                                                     <rect key="frame" x="65" y="29.5" width="284" height="21"/>
@@ -303,14 +310,24 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="8Js-jP-A1T" firstAttribute="centerY" secondItem="cgb-d0-GYf" secondAttribute="centerY" id="2Sd-VZ-2cf"/>
+                                                <constraint firstItem="8Js-jP-A1T" firstAttribute="top" secondItem="cgb-d0-GYf" secondAttribute="top" constant="5" id="BVA-eQ-xH1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0Hf-WE-tt2" secondAttribute="trailing" constant="10" id="KtF-s9-Jnj"/>
                                                 <constraint firstItem="0Hf-WE-tt2" firstAttribute="leading" secondItem="8Js-jP-A1T" secondAttribute="trailing" constant="5" id="hfq-hG-SWw"/>
                                                 <constraint firstItem="0Hf-WE-tt2" firstAttribute="centerY" secondItem="cgb-d0-GYf" secondAttribute="centerY" id="jjh-Ke-YxV"/>
+                                                <constraint firstAttribute="bottom" secondItem="8Js-jP-A1T" secondAttribute="bottom" constant="5" id="rwT-gI-pX8"/>
                                                 <constraint firstItem="8Js-jP-A1T" firstAttribute="leading" secondItem="cgb-d0-GYf" secondAttribute="leading" constant="10" id="tiB-eZ-kIn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imagemFilmeSugerido" destination="8Js-jP-A1T" id="i14-La-j58"/>
+                                            <outlet property="nomeFilmeSugerido" destination="0Hf-WE-tt2" id="ytm-Hw-tiJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GMo-XU-NsP" id="N8i-vh-Hg0"/>
+                                    <outlet property="delegate" destination="GMo-XU-NsP" id="PqA-wg-EYw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kYH-kr-JFy"/>
@@ -326,6 +343,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sugeridos" id="zck-9v-3T5"/>
+                    <connections>
+                        <outlet property="tableViewSugeridos" destination="AAH-XR-CRj" id="SEN-Yb-e02"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOt-Qg-mHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -532,7 +552,7 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="518"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaAssistidos" id="8Po-97-shN" customClass="AssistidosTableViewCell" customModule="DesafioJera" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaAssistidos" rowHeight="80" id="8Po-97-shN" customClass="AssistidosTableViewCell" customModule="DesafioJera" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Po-97-shN" id="idS-9z-ek2">
@@ -545,6 +565,11 @@
                                                         <constraint firstAttribute="height" constant="50" id="7sT-An-3c2"/>
                                                         <constraint firstAttribute="width" constant="50" id="kgH-EZ-NNk"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKE-sl-gdI">
                                                     <rect key="frame" x="65" y="29.5" width="284" height="21"/>

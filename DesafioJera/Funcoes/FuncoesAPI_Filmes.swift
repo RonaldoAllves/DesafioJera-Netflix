@@ -51,6 +51,40 @@ class FuncoesAPI_Filmes {
         return objetoJson
     }
     
+    func buscarFilmesPeloGenero(genero : Int) -> [String:Any]?{
+        var filme:[String:Any]!
+        
+        let url_base = "https://api.themoviedb.org/3/discover/movie?"
+        
+        let genero_s = "with_genres=" + String(genero)
+        
+        let atributoPopularidade = "&sort_by=popularity.desc"
+        
+        let url_s = url_base + genero_s + atributoPopularidade + "&api_key=" + key
+        
+        if let url = URL(string: url_s){
+            
+            let data = NSData(contentsOf: url)
+            
+            if let dadosRetorno = data{
+                do {
+                    if let objeto = try JSONSerialization.jsonObject(with: dadosRetorno as Data, options: []) as? [String: Any]{
+                        filme = objeto
+                    }
+                    
+                } catch  {
+                    print("\n\n\tErro na conversao para Json\n\n")
+                }
+
+            }
+
+        }else{
+            print("Erro estranho")
+        }
+        
+        return filme
+    }
+    
     func buscarFilmePeloID(id:Int) -> [String:Any]?{
         var filme:[String:Any]!
         

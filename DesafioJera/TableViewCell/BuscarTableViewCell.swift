@@ -12,11 +12,4 @@ class BuscarTableViewCell: UITableViewCell {
     @IBOutlet weak var imagemFotoFilme: UIImageView!
     @IBOutlet weak var textoNomeFilme: UILabel!
     
-    
-    @IBAction func butaoAssistirMaisTarde(_ sender: Any) {
-    }
-    
-    @IBAction func botaoJaAssistido(_ sender: Any) {
-    }
-    
 }
