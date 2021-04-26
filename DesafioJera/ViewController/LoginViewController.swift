@@ -16,8 +16,13 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var campoEmail: UITextField!
     @IBOutlet weak var campoSenha: UITextField!
+    @IBOutlet weak var loginFacebookBotaoTexto: UIButton!
+    
+    
     var auth: Auth!
     var firestore: Firestore!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,93 +33,14 @@ class LoginViewController: UIViewController {
         //Verifica se o usuario esta logado
         auth.addStateDidChangeListener { (autenticacao, usuario) in
             if usuario != nil {
+                self.loginFacebookBotaoTexto.setTitle("Logado com Facebook", for: .normal)
                 //Se exister o usuario é porque está logado, entao vai para a tela principal
                 self.performSegue(withIdentifier: "segueLoginAutomatico", sender: nil)
             }else{
-                
+                self.loginFacebookBotaoTexto.setTitle("Entrar com Facebook", for: .normal)
             }
         }
-        
-        if let token = AccessToken.current, !token.isExpired {
-            let token = token.tokenString
-            
-            let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields" : "email, name"], tokenString: token, version: nil,
-                                                     httpMethod: .get)
-
-            request.start { (connection, result, erro) in
-                print("\nresultado 1:")
-                print("\(result)")
-                
-                var dicionario : [String: Any]!
-                
-                dicionario = result as! [String: Any]
-                
-                print("\nresultado 2:")
-                print(dicionario["id"])
-                
-                
-                
-                
-            }
-
-        }else{
-            // colar botao aqui
-        }
-        //Botao do facebook
-        let loginButton = FBLoginButton()
-        loginButton.center = view.center
-        loginButton.permissions = ["public_profile", "email"]
-        view.addSubview(loginButton)
-        
     }
-    /*
-    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
-        //let token = result?.token?.tokenString
-        
-        
-        print("\n\nteste 1\n")
-        
-        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-        print("\n\nteste 2\n")
-        
-        print(credential)
-        
-        Auth.auth().signIn(with: credential) { (authResult, error) in
-          if let error = error {
-          
-              return
-          }else{
-            
-            let usuario = Auth.auth().currentUser
-            
-            if let user = usuario{
-                
-                print("\n\nteste fantastico")
-                print(user.email)
-                
-            }
-            
-          }
-        }
-        
-        
-        
-        
-    }
- */
-    /*
-    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
-        
-        /* Usar quando tiver cadastrado usuario do Facebook */
-        /*
-        do {
-            try auth.signOut() //Desloga o usuario
-        } catch  {
-            print("Erro ao deslogar usuário!")
-        }
-       */
-    }
- */
     
     //Utilizado para esconder a barra de navegacao.
     override func viewWillAppear(_ animated: Bool) {
@@ -153,7 +79,6 @@ class LoginViewController: UIViewController {
         
     }
     
-    
     @IBAction func loginFacebook(_ sender: Any) {
         
         let loginManager = LoginManager()
@@ -176,7 +101,8 @@ class LoginViewController: UIViewController {
                         
                         let nome = dadosUsuario.displayName
                         let email = dadosUsuario.email
-                    
+                        let fotoPerfil = dadosUsuario.photoURL
+                        
                         let idUsuario = dadosUsuario.uid
                             
                             //Cadastra os dados do usuario pelo uid do usuario

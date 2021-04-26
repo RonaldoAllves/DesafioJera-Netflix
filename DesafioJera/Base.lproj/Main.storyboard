@@ -91,6 +91,7 @@
                     <connections>
                         <outlet property="campoEmail" destination="DqR-Sn-Y2T" id="vKl-8x-gpL"/>
                         <outlet property="campoSenha" destination="pDH-83-1sj" id="ZKm-Z4-ca2"/>
+                        <outlet property="loginFacebookBotaoTexto" destination="eaA-Dx-wLY" id="R1y-XA-Iog"/>
                         <segue destination="fJc-mZ-hQf" kind="show" identifier="segueLoginAutomatico" id="445-J3-CZX"/>
                     </connections>
                 </viewController>
