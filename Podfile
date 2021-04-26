@@ -11,5 +11,7 @@ target 'DesafioJera' do
   pod 'Firebase/Storage' 
   pod 'Firebase/Firestore'
   pod 'FirebaseUI/Storage'
+  pod 'FBSDKLoginKit'
+    
 
 end
