@@ -57,8 +57,8 @@ class CadastroViewController: UIViewController {
                                         ])
                                     
                                     //Cria o primeiro perfil do usuario, com nome de Principal
-                                    for var i in 1..<5{
-                                        var numeroPerfil = "Perfil \(String(i))"
+                                    for i in 1..<5{
+                                        let numeroPerfil = "Perfil \(String(i))"
                                         
                                         
                                         self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["FilmesAssistidos" : Array<Any>()], merge: true)

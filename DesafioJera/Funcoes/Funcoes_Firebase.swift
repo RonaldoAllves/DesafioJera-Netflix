@@ -24,6 +24,7 @@ class Funcoes_Firebase {
         
     }
     
+    /*
     func recuperarPerfil(completion: @escaping(DocumentSnapshot?)->()){
         
         inicializarObjetoAutenticacao()
@@ -40,6 +41,6 @@ class Funcoes_Firebase {
         
         
     }
-    
+    */
     
 }

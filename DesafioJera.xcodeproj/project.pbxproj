@@ -28,7 +28,7 @@
 		76F36FFD2635FF15009FA88C /* ParaAssistirTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F36FFC2635FF15009FA88C /* ParaAssistirTableViewCell.swift */; };
 		76F3700026360038009FA88C /* ParaAssistirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F36FFF26360038009FA88C /* ParaAssistirViewController.swift */; };
 		76F370032636244D009FA88C /* SugeridosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F370022636244D009FA88C /* SugeridosViewController.swift */; };
-		76F79D4826373E870063045A /* Funcao_Cadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F79D4726373E870063045A /* Funcao_Cadastro.swift */; };
+		76F79D4B2637A0C80063045A /* Alertas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F79D4A2637A0C80063045A /* Alertas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +55,7 @@
 		76F36FFC2635FF15009FA88C /* ParaAssistirTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParaAssistirTableViewCell.swift; sourceTree = "<group>"; };
 		76F36FFF26360038009FA88C /* ParaAssistirViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParaAssistirViewController.swift; sourceTree = "<group>"; };
 		76F370022636244D009FA88C /* SugeridosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugeridosViewController.swift; sourceTree = "<group>"; };
-		76F79D4726373E870063045A /* Funcao_Cadastro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funcao_Cadastro.swift; sourceTree = "<group>"; };
+		76F79D4A2637A0C80063045A /* Alertas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertas.swift; sourceTree = "<group>"; };
 		C017C3172D3759BBA8D64B2B /* Pods_DesafioJera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioJera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37CF80346854712C321E850 /* Pods-DesafioJera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJera.debug.xcconfig"; path = "Target Support Files/Pods-DesafioJera/Pods-DesafioJera.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,7 +162,7 @@
 			children = (
 				76F36FEF2635B4FB009FA88C /* FuncoesAPI_Filmes.swift */,
 				76F36FF22635BE19009FA88C /* Funcoes_Firebase.swift */,
-				76F79D4726373E870063045A /* Funcao_Cadastro.swift */,
+				76F79D4A2637A0C80063045A /* Alertas.swift */,
 			);
 			path = Funcoes;
 			sourceTree = "<group>";
@@ -295,6 +295,7 @@
 				766C774326339E7500670FBD /* BuscarTableViewCell.swift in Sources */,
 				76F36FF32635BE19009FA88C /* Funcoes_Firebase.swift in Sources */,
 				76F36FF02635B4FB009FA88C /* FuncoesAPI_Filmes.swift in Sources */,
+				76F79D4B2637A0C80063045A /* Alertas.swift in Sources */,
 				763C1A5C26326280003B7A64 /* PerfisViewController.swift in Sources */,
 				767CABE1262FA827005DBE67 /* AppDelegate.swift in Sources */,
 				76F36FF92635E5F2009FA88C /* AssistidosTableViewCell.swift in Sources */,
@@ -307,7 +308,6 @@
 				76F36FE82635B46F009FA88C /* AssistidosViewController.swift in Sources */,
 				765F1DD726322D1C00B9DA51 /* CadastroViewController.swift in Sources */,
 				7609F1E62636442A00D534C5 /* SugeridosTableViewCell.swift in Sources */,
-				76F79D4826373E870063045A /* Funcao_Cadastro.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

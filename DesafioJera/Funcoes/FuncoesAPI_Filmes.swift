@@ -18,7 +18,7 @@ class FuncoesAPI_Filmes {
         let url_base = "https://api.themoviedb.org/3/search/movie?"
         
         let atributo_busca = "query="
-        let atributo_pagina = "&page="
+        //let atributo_pagina = "&page="
         let atributo_key = "&api_key="
         
         var url_s : String!

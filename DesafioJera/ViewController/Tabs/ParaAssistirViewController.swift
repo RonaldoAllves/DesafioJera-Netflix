@@ -38,15 +38,18 @@ class ParaAssistirViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidAppear(_ animated: Bool) {
         let usuariosRef = self.firestore.collection("usuarios").document(PerfisViewController.GlobalVariable.idAtual)
         let perfisRef = usuariosRef.collection("Perfis")
-        var perfil = perfisRef.document("Perfil \(String(PerfisViewController.GlobalVariable.perfilAtul))")
+        let perfil = perfisRef.document("Perfil \(String(PerfisViewController.GlobalVariable.perfilAtul))")
         
         perfil.getDocument { (snapshotPerfil, erro) in
             if let dadosPerfil = snapshotPerfil?.data(){
                 
-                self.filmesParaAssistirID_firebase = dadosPerfil["FilmesParaAssistir"] as! Array<Int>
-                self.totalFilmes = self.filmesParaAssistirID_firebase.count
+                if let listaFilmesParaAssistir = dadosPerfil["FilmesParaAssistir"] as? Array<Int>{
+                    self.filmesParaAssistirID_firebase = listaFilmesParaAssistir
+                    self.totalFilmes = self.filmesParaAssistirID_firebase.count
+                    
+                    self.tableViewParaAssistir.reloadData()
+                }
                 
-                self.tableViewParaAssistir.reloadData()
             }
         }
     }

@@ -12,7 +12,7 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
-    let FuncaoCadastroFacebook = Funcao_Cadastro()
+    let alerta = Alertas()
     
     @IBOutlet weak var campoEmail: UITextField!
     @IBOutlet weak var campoSenha: UITextField!
@@ -61,19 +61,21 @@ class LoginViewController: UIViewController {
                             print("Sucesso ao logar usuario:  \(String(describing: usuarioLogado.user.email))")
                         }
                     }else{
-                        print("Erro ao logar usuario!") //Criar alerta
+                        if let er = erro{
+                            self.alerta.alertas(titulo: "Erro ao logar usuario", erro: er.localizedDescription)
+                            print("Erro ao logar usuario!") //Criar alerta
+                        }
+                        
                     }
                 }
                 
             }else{
-                //Criar alerta para campo senha errado
+                self.alerta.alertas(titulo: "Erro de senha", erro: "Senha digitada de forma incorreta")
             }
         }else{
-            //Criar alerta para campo email errado
+            self.alerta.alertas(titulo: "Erro de email", erro: "Email digitado de forma incorreta")
         }
-        
-        
-        
+ 
     }
     
     @IBAction func loginFacebook(_ sender: Any) {
@@ -81,59 +83,71 @@ class LoginViewController: UIViewController {
         let loginManager = LoginManager()
         loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, erro) in
             
-            let acessoToken = AccessToken.current
-            
-            let credencial = FacebookAuthProvider.credential(withAccessToken: acessoToken!.tokenString)
-            
-            Auth.auth().signIn(with: credencial) { (usuario, erro) in
+            if let erro = erro {
                 
-                if let erro = erro{
-                    print("\n\nLogin Erro: \(erro.localizedDescription)")
-                }else{
+                self.alerta.alertas(titulo: "Erro ao fazer login com Facebook", erro: erro.localizedDescription)
+                
+            }else{
+                let acessoToken = AccessToken.current
+                
+                let credencial = FacebookAuthProvider.credential(withAccessToken: acessoToken!.tokenString)
+                
+                Auth.auth().signIn(with: credencial) { (usuario, erro) in
                     
-                    if let dadosUsuario = usuario?.user{
+                    if let erro = erro{
+                        print("\n\nLogin Erro: \(erro.localizedDescription)")
+                    }else{
                         
-                        let nome = dadosUsuario.displayName
-                        let email = dadosUsuario.email
-                        let fotoPerfil = dadosUsuario.photoURL?.absoluteString
-                        
-                        print("\n\n\(fotoPerfil)")
-                        
-                        let idUsuario = dadosUsuario.uid
-                        
+                        if let dadosUsuario = usuario?.user{
                             
-                            //Cadastra os dados do usuario pelo uid do usuario
-                        self.firestore.collection("usuarios").document(idUsuario)
-                            .setData([
-                                "nome" : nome,
-                                "email" : email,
-                                "dataDeNascimento" : "",
-                                "urlImagemLogin" : fotoPerfil
-                            ])
-                        
-                        //Cria o primeiro perfil do usuario, com nome de Principal
-                        for var i in 1..<5{
-                            var numeroPerfil = "Perfil \(String(i))"
+                            if let nome = dadosUsuario.displayName{
                             
-                            
-                            self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["FilmesAssistidos" : Array<Any>()], merge: true)
-                            
-                            self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["GenerosDosFilmes" : [Int:Int]()], merge: true)
-                            
-                            self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["FilmesParaAssistir" : Array<Any>()], merge: true)
-                    
-                            self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["dono" : "sem dono"], merge: true)
+                                if let email = dadosUsuario.email{
+                                    
+                                    if let fotoPerfil = dadosUsuario.photoURL?.absoluteString{
+                                    
+                                        let idUsuario = dadosUsuario.uid
+                                        
+                                            
+                                            //Cadastra os dados do usuario pelo uid do usuario
+                                        self.firestore.collection("usuarios").document(idUsuario)
+                                            .setData([
+                                                "nome" : nome,
+                                                "email" : email,
+                                                "dataDeNascimento" : "",
+                                                "urlImagemLogin" : fotoPerfil
+                                            ])
+                                        
+                                        //Cria o primeiro perfil do usuario, com nome de Principal
+                                        for i in 1..<5{
+                                            let numeroPerfil = "Perfil \(String(i))"
+                                            
+                                            
+                                            self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["FilmesAssistidos" : Array<Any>()], merge: true)
+                                            
+                                            self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["GenerosDosFilmes" : [Int:Int]()], merge: true)
+                                            
+                                            self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["FilmesParaAssistir" : Array<Any>()], merge: true)
+                                    
+                                            self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["dono" : "sem dono"], merge: true)
 
+                                            
+                                        }
+                                    }
+                                }
+                                
+                            }
                             
                         }
                         
                     }
                     
                 }
-                
             }
             
-        }
+            
+            
+        }//
         
     }
     

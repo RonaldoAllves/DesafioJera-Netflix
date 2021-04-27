@@ -42,18 +42,23 @@ class DetalhesFilmeViewController: UIViewController {
         
         if let perfilAtual = PerfisViewController.GlobalVariable.perfilAtul{
             
-            let idUsuarioAtual = PerfisViewController.GlobalVariable.idAtual as! String
+            if let idUsuarioAtual = PerfisViewController.GlobalVariable.idAtual{
             
-            let perfil = "Perfil \(String(describing: perfilAtual))"
-            self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([
-                                                                                                                                    "FilmesParaAssistir":FieldValue.arrayUnion([self.idFilme])])
-            
-            for genero in generos{
-                let campo = "GenerosDosFilmes." + String(genero)
-                self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([campo : FieldValue.increment(Int64(1))])
+                let perfil = "Perfil \(String(describing: perfilAtual))"
+                
+                if let idFilme = self.idFilme{
+                
+                    self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([
+                                                                                                                                        "FilmesParaAssistir":FieldValue.arrayUnion([idFilme])])
+                    
+                    for genero in generos{
+                        let campo = "GenerosDosFilmes." + String(genero)
+                        self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([campo : FieldValue.increment(Int64(1))])
+                    }
+                    
+                    //criar aletar infomando que o filme foi adicionado
+                }
             }
-            
-            //criar aletar infomando que o filme foi adicionado
             
         }
         
@@ -63,18 +68,24 @@ class DetalhesFilmeViewController: UIViewController {
         
         if let perfilAtual = PerfisViewController.GlobalVariable.perfilAtul{
             
-            let idUsuarioAtual = PerfisViewController.GlobalVariable.idAtual as! String
+            if let idUsuarioAtual = PerfisViewController.GlobalVariable.idAtual{
             
-            let perfil = "Perfil \(String(describing: perfilAtual))"
-            
-            self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData(["FilmesAssistidos":FieldValue.arrayUnion([idFilme])])
+                let perfil = "Perfil \(String(describing: perfilAtual))"
+                
+                if let idFilme = self.idFilme{
+                
+                    self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData(["FilmesAssistidos":FieldValue.arrayUnion([idFilme])])
 
-            
-            for genero in generos{
-                let campo = "GenerosDosFilmes." + String(genero)
-                self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([campo : FieldValue.increment(Int64(1))])
+                    
+                    for genero in generos{
+                        let campo = "GenerosDosFilmes." + String(genero)
+                        self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([campo : FieldValue.increment(Int64(1))])
+                    }
+                    //Criar alerta informando que o filme foi adicionado
+                    
+                }
+                
             }
-            //Criar alerta informando que o filme foi adicionado
             
         }
         

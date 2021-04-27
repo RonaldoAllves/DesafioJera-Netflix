@@ -14,6 +14,8 @@ import FBSDKLoginKit
 
 class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    let alertas = Alertas()
+    
     var auth: Auth!
     var storage: Storage!
     var firestore: Firestore!
@@ -73,33 +75,46 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
         usuariosRef.getDocument { (snapshot, erro) in
             
             if let dados = snapshot?.data(){
-                self.campoNomeLogin.text = dados["nome"] as! String
-                self.campoEmailLogin.text = dados["email"] as! String
                 
-                
-                if let urlImagemLogin = dados["urlImagemLogin"] as? String{
-                    self.imagemBotaoLogin.sd_setImage(with: URL(string: urlImagemLogin), for: .normal, completed: nil)
+                if let nome = dados["nome"] as? String{
+                    
+                    self.campoNomeLogin.text = nome
+                    
+                    if let email = dados["email"] as? String{
+                        self.campoEmailLogin.text = email
+                    
+                        if let urlImagemLogin = dados["urlImagemLogin"] as? String{
+                            self.imagemBotaoLogin.sd_setImage(with: URL(string: urlImagemLogin), for: .normal, completed: nil)
+                        }
+                        
+                    }
+                    
                 }
                 
+                
             }else{
-                print("Erro ao pegar os dados do usuario 50")
+                if let er = erro?.localizedDescription{
+                    self.alertas.alertas(titulo: "Erro ao obter dados do usuario", erro: er)
+                }
             }
             
         }
         
         let perfisRef = usuariosRef.collection("Perfis")
-        for var i in 1..<5{
-            var perfil_i = perfisRef.document("Perfil \(String(i))")
+        for i in 1..<5{
+            let perfil_i = perfisRef.document("Perfil \(String(i))")
             perfil_i.getDocument { (snapshotPerfil, erro) in
                 
                 if let dadosPerfil = snapshotPerfil?.data(){
                     
-                    self.arrayNomePerfil[i-1].text = dadosPerfil["dono"] as! String
+                    if let dono = dadosPerfil["dono"] as? String{
                     
-                    if let urlImagemPerfil = dadosPerfil["urlImagemPerfil"] as? String{
-                        self.arrayImagemBotaoPerfis[i-1].sd_setImage(with: URL(string: urlImagemPerfil), for: .normal, completed: nil)
+                        self.arrayNomePerfil[i-1].text = dono
+                        
+                        if let urlImagemPerfil = dadosPerfil["urlImagemPerfil"] as? String{
+                            self.arrayImagemBotaoPerfis[i-1].sd_setImage(with: URL(string: urlImagemPerfil), for: .normal, completed: nil)
+                        }
                     }
-                    
                     
                 }else{
                     print("erro ao pegar perfil \(i)")
@@ -196,7 +211,9 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        self.imagemRecuperada = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        if let imagem = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            self.imagemRecuperada = imagem
+        }
         
         //fecha a selecao de imagem ao clicar em alguma foto
         imagePicher.dismiss(animated: true) {

@@ -24,7 +24,7 @@ class SugeridosViewController: UIViewController, UITableViewDelegate, UITableVie
     
     //var generoPrincipal : Int = 0
     var resultadosBuscaFilmes : Array<Any>!
-    var totalFilmes : Int = 0
+    var totalFilmes : Int!
 
     @IBOutlet weak var tableViewSugeridos: UITableView!
     
@@ -42,7 +42,7 @@ class SugeridosViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let usuariosRef = self.firestore.collection("usuarios").document(PerfisViewController.GlobalVariable.idAtual)
         let perfisRef = usuariosRef.collection("Perfis")
-        var perfil = perfisRef.document("Perfil \(String(PerfisViewController.GlobalVariable.perfilAtul))")
+        let perfil = perfisRef.document("Perfil \(String(PerfisViewController.GlobalVariable.perfilAtul))")
         
         perfil.getDocument { (snapshotPerfil, erro) in
             if let dadosPerfil = snapshotPerfil?.data(){
@@ -58,12 +58,13 @@ class SugeridosViewController: UIViewController, UITableViewDelegate, UITableVie
                     generoPrincipal = Int(maximo.key)!
                 }
                 
-                let objetoJson = self.funcoes_API.buscarFilmesPeloGenero(genero: generoPrincipal) as! [String : Any]
-                self.resultadosBuscaFilmes = self.funcoes_API.resultadosBuscaFilmes(objetoJson: objetoJson)
-                self.totalFilmes = self.resultadosBuscaFilmes.count
                 
-                self.tableViewSugeridos.reloadData()
-                
+                if let objetoJson = self.funcoes_API.buscarFilmesPeloGenero(genero: generoPrincipal){
+                    self.resultadosBuscaFilmes = self.funcoes_API.resultadosBuscaFilmes(objetoJson: objetoJson)
+                    self.totalFilmes = self.resultadosBuscaFilmes.count
+                    
+                    self.tableViewSugeridos.reloadData()
+                }
                 //self.tableViewAssistidos.reloadData()
             
             }
