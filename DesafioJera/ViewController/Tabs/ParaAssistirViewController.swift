@@ -13,6 +13,8 @@ import FirebaseUI
 
 class ParaAssistirViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    let alerta = Alertas()
+    
     let funcoes_firebase = Funcoes_Firebase()
     let funcoes_API = FuncoesAPI_Filmes()
     
@@ -80,6 +82,39 @@ class ParaAssistirViewController: UIViewController, UITableViewDelegate, UITable
         return celula
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "segueDetalhesParaAssistir"{
+            
+            if let indexPath = tableViewParaAssistir.indexPathForSelectedRow{
+                
+                let indice = indexPath.row
+                
+                let id_filme = filmesParaAssistirID_firebase[indice]
+                let filme = funcoes_API.buscarFilmePeloID(id: id_filme)!
+                
+                let viewControllerDestinoDetalhesFilme = segue.destination as! DetalhesParaAssistirViewController
 
+                viewControllerDestinoDetalhesFilme.idFilme = self.funcoes_API.obterIDFilme(filme: filme)
+                viewControllerDestinoDetalhesFilme.nome = self.funcoes_API.obterNomeFilme(filme: filme)
+                viewControllerDestinoDetalhesFilme.sinopse = self.funcoes_API.obterSinopseFilme(filme: filme)
+                viewControllerDestinoDetalhesFilme.imagem = self.funcoes_API.obterImagemFilme(filme: filme)
+                
+                //print(filme)
+                if let gen = self.funcoes_API.obterGeneroFilmeDoId(filme: filme){
+                    viewControllerDestinoDetalhesFilme.generos = gen
+                    
+                    //print(gen)
+                    
+                }else{
+                    print("\n\nErro Genero")
+                    alerta.alertas(titulo: "Genero", erro: "Erro ao obter genero")
+                }
+                
+            }
+            
+        }
+    }
 
 }

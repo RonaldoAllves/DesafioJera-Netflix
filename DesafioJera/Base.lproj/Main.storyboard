@@ -234,6 +234,7 @@
                                         <connections>
                                             <outlet property="imagemFilmeParaAssistir" destination="q47-lQ-kt6" id="efy-Ce-McA"/>
                                             <outlet property="nomeFilmeParaAssistir" destination="EjC-32-WyY" id="llJ-gc-odk"/>
+                                            <segue destination="IDv-qi-VzR" kind="show" identifier="segueDetalhesParaAssistir" id="lix-K7-eeF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -260,6 +261,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3k-YG-tXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6888.8000000000002" y="-659.82008995502258"/>
+        </scene>
+        <!--Detalhes Para Assistir View Controller-->
+        <scene sceneID="PSj-Hm-Z51">
+            <objects>
+                <viewController id="IDv-qi-VzR" customClass="DetalhesParaAssistirViewController" customModule="DesafioJera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ygz-rf-rSL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="52t-Ik-tWL">
+                                <rect key="frame" x="22.5" y="64" width="330" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="330" id="hqW-Of-b0d"/>
+                                    <constraint firstAttribute="height" constant="185" id="iXL-Sb-MOO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo do Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAA-gv-wXN">
+                                <rect key="frame" x="22.5" y="269" width="330" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxk-P3-eMV">
+                                <rect key="frame" x="22.5" y="298" width="330" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="RMI-MR-6zz"/>
+                                </constraints>
+                                <string key="text">Sinopse é uma descrição sintética da ideia do filme. Deve deixar claro o que será abordado no documentário, quem são as personagens e  onde se passa, também pode trazer, sucintamente, por que é importante contar aquela história. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fK1-yA-XFm">
+                                <rect key="frame" x="146.5" y="488" width="82" height="30"/>
+                                <state key="normal" title="Já Assistido"/>
+                                <connections>
+                                    <action selector="jaAssistido:" destination="IDv-qi-VzR" eventType="touchUpInside" id="pnF-ci-0ta"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QV2-cM-1kK"/>
+                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hxk-P3-eMV" firstAttribute="leading" secondItem="QV2-cM-1kK" secondAttribute="leading" constant="22.5" id="1IP-BC-GIS"/>
+                            <constraint firstItem="fK1-yA-XFm" firstAttribute="top" secondItem="Hxk-P3-eMV" secondAttribute="bottom" constant="50" id="Nb5-e5-5kt"/>
+                            <constraint firstItem="oAA-gv-wXN" firstAttribute="top" secondItem="52t-Ik-tWL" secondAttribute="bottom" constant="20" id="OeA-JU-HLm"/>
+                            <constraint firstItem="QV2-cM-1kK" firstAttribute="trailing" secondItem="oAA-gv-wXN" secondAttribute="trailing" constant="22.5" id="SIl-KK-76P"/>
+                            <constraint firstItem="fK1-yA-XFm" firstAttribute="centerX" secondItem="ygz-rf-rSL" secondAttribute="centerX" id="SLm-LT-lup"/>
+                            <constraint firstItem="Hxk-P3-eMV" firstAttribute="top" secondItem="oAA-gv-wXN" secondAttribute="bottom" constant="8" id="Zci-Pl-oiv"/>
+                            <constraint firstItem="QV2-cM-1kK" firstAttribute="trailing" secondItem="Hxk-P3-eMV" secondAttribute="trailing" constant="22.5" id="gwk-ca-y4b"/>
+                            <constraint firstItem="52t-Ik-tWL" firstAttribute="centerX" secondItem="ygz-rf-rSL" secondAttribute="centerX" id="hH8-Vf-xif"/>
+                            <constraint firstItem="oAA-gv-wXN" firstAttribute="leading" secondItem="QV2-cM-1kK" secondAttribute="leading" constant="22.5" id="qGy-Jr-Yh0"/>
+                            <constraint firstItem="52t-Ik-tWL" firstAttribute="top" secondItem="QV2-cM-1kK" secondAttribute="top" constant="20" id="sar-Cg-iGj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mgg-dA-HZK"/>
+                    <connections>
+                        <outlet property="imagemFilme" destination="52t-Ik-tWL" id="nUQ-bl-N5O"/>
+                        <outlet property="sinopseFilme" destination="Hxk-P3-eMV" id="z6d-07-DNj"/>
+                        <outlet property="tituloFilme" destination="oAA-gv-wXN" id="Pzd-Pt-vNU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ra8-Od-Yqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7748" y="-660"/>
         </scene>
         <!--Sugeridos-->
         <scene sceneID="Dsl-mT-vyq">

@@ -171,6 +171,33 @@ class FuncoesAPI_Filmes {
         
     }
     
+    func obterGeneroFilmeDoId(filme: [String:Any]) -> Array<Int>?{
+        
+        if let generos = filme["genres"]{
+            
+            print(generos)
+            
+            if let generoArrayAny = generos as? Array<Any>{
+                
+                var generoArrayInt : Array<Int> = []
+                
+                for i in 0..<generoArrayAny.count{
+                    let g = generoArrayAny[i] as! [String:Any]
+                    print("genero: \(g)")
+                    if let gInt = g["id"] as? Int{
+                        print(gInt)
+                        generoArrayInt.append(gInt)
+                    }
+                    
+                }
+                
+                return generoArrayInt
+            }
+        }
+        return nil
+        
+    }
+    
     func obterImagemFilme(filme: [String:Any]) -> UIImage?{
         
         let url_base = "https://image.tmdb.org/t/p/w500"
