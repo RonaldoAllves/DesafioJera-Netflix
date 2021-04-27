@@ -18,11 +18,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var campoSenha: UITextField!
     @IBOutlet weak var loginFacebookBotaoTexto: UIButton!
     
-    
     var auth: Auth!
     var firestore: Firestore!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,9 +81,6 @@ class LoginViewController: UIViewController {
         let loginManager = LoginManager()
         loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, erro) in
             
-            
-            //print(result)
-            
             let acessoToken = AccessToken.current
             
             let credencial = FacebookAuthProvider.credential(withAccessToken: acessoToken!.tokenString)
@@ -101,16 +95,20 @@ class LoginViewController: UIViewController {
                         
                         let nome = dadosUsuario.displayName
                         let email = dadosUsuario.email
-                        let fotoPerfil = dadosUsuario.photoURL
+                        let fotoPerfil = dadosUsuario.photoURL?.absoluteString
+                        
+                        print("\n\n\(fotoPerfil)")
                         
                         let idUsuario = dadosUsuario.uid
+                        
                             
                             //Cadastra os dados do usuario pelo uid do usuario
                         self.firestore.collection("usuarios").document(idUsuario)
                             .setData([
                                 "nome" : nome,
                                 "email" : email,
-                                "dataDeNascimento" : ""
+                                "dataDeNascimento" : "",
+                                "urlImagemLogin" : fotoPerfil
                             ])
                         
                         //Cria o primeiro perfil do usuario, com nome de Principal

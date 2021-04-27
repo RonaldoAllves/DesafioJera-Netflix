@@ -10,6 +10,7 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseFirestore
 import FirebaseUI
+import FBSDKLoginKit
 
 class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -74,6 +75,7 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
             if let dados = snapshot?.data(){
                 self.campoNomeLogin.text = dados["nome"] as! String
                 self.campoEmailLogin.text = dados["email"] as! String
+                
                 
                 if let urlImagemLogin = dados["urlImagemLogin"] as? String{
                     self.imagemBotaoLogin.sd_setImage(with: URL(string: urlImagemLogin), for: .normal, completed: nil)
@@ -180,17 +182,7 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
         performSegue(withIdentifier: "segueMenu", sender: nil)
     }
     
-    //Funcao para deslogar o usuario
-    @IBAction func deslogar(_ sender: Any) {
-        
-        do {
-            try auth.signOut() //Desloga o usuario
-        } catch  {
-            print("Erro ao deslogar usuário!")
-        }
-        
-    }
-    
+
     
     @IBAction func escolherImagemLogin(_ sender: Any) {
         
@@ -276,6 +268,23 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         
     }
+    
+    //Funcao para deslogar o usuario
+    @IBAction func deslogar(_ sender: Any) {
+        
+        do {
+            try auth.signOut() //Desloga o usuario
+            let loginManager = LoginManager()
+            loginManager.logOut()
+            
+            
+            
+        } catch  {
+            print("Erro ao deslogar usuário!")
+        }
+        
+    }
+    
     
     struct GlobalVariable{
         static var perfilAtul: Int!
