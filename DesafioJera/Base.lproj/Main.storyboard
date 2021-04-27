@@ -307,9 +307,12 @@
                             <constraint firstItem="Hxk-P3-eMV" firstAttribute="leading" secondItem="QV2-cM-1kK" secondAttribute="leading" constant="22.5" id="1IP-BC-GIS"/>
                             <constraint firstItem="fK1-yA-XFm" firstAttribute="top" secondItem="Hxk-P3-eMV" secondAttribute="bottom" constant="50" id="Nb5-e5-5kt"/>
                             <constraint firstItem="oAA-gv-wXN" firstAttribute="top" secondItem="52t-Ik-tWL" secondAttribute="bottom" constant="20" id="OeA-JU-HLm"/>
+                            <constraint firstItem="52t-Ik-tWL" firstAttribute="leading" secondItem="QV2-cM-1kK" secondAttribute="leading" constant="22.5" id="P89-jr-m6l"/>
                             <constraint firstItem="QV2-cM-1kK" firstAttribute="trailing" secondItem="oAA-gv-wXN" secondAttribute="trailing" constant="22.5" id="SIl-KK-76P"/>
                             <constraint firstItem="fK1-yA-XFm" firstAttribute="centerX" secondItem="ygz-rf-rSL" secondAttribute="centerX" id="SLm-LT-lup"/>
+                            <constraint firstItem="52t-Ik-tWL" firstAttribute="top" secondItem="QV2-cM-1kK" secondAttribute="top" constant="20" id="ZML-zW-kIi"/>
                             <constraint firstItem="Hxk-P3-eMV" firstAttribute="top" secondItem="oAA-gv-wXN" secondAttribute="bottom" constant="8" id="Zci-Pl-oiv"/>
+                            <constraint firstItem="QV2-cM-1kK" firstAttribute="trailing" secondItem="52t-Ik-tWL" secondAttribute="trailing" constant="22.5" id="dxa-LZ-ov4"/>
                             <constraint firstItem="QV2-cM-1kK" firstAttribute="trailing" secondItem="Hxk-P3-eMV" secondAttribute="trailing" constant="22.5" id="gwk-ca-y4b"/>
                             <constraint firstItem="52t-Ik-tWL" firstAttribute="centerX" secondItem="ygz-rf-rSL" secondAttribute="centerX" id="hH8-Vf-xif"/>
                             <constraint firstItem="oAA-gv-wXN" firstAttribute="leading" secondItem="QV2-cM-1kK" secondAttribute="leading" constant="22.5" id="qGy-Jr-Yh0"/>
@@ -378,6 +381,7 @@
                                         <connections>
                                             <outlet property="imagemFilmeSugerido" destination="8Js-jP-A1T" id="i14-La-j58"/>
                                             <outlet property="nomeFilmeSugerido" destination="0Hf-WE-tt2" id="ytm-Hw-tiJ"/>
+                                            <segue destination="gKr-sD-IbJ" kind="show" identifier="segueSugeridosDetalhes" id="bGn-MS-b6d"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -404,6 +408,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOt-Qg-mHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6885.6000000000004" y="58.920539730134934"/>
+        </scene>
+        <!--Detalhes Sugeridos View Controller-->
+        <scene sceneID="bkm-DF-G12">
+            <objects>
+                <viewController id="gKr-sD-IbJ" customClass="DetalhesSugeridosViewController" customModule="DesafioJera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4cX-Pe-Ake">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U1L-vm-Hbr">
+                                <rect key="frame" x="22.5" y="64" width="330" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="5f3-B5-d0b"/>
+                                    <constraint firstAttribute="width" constant="330" id="e8J-cj-TLp"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo do Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFR-tM-7BA">
+                                <rect key="frame" x="22.5" y="269" width="330" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgn-1c-vwo">
+                                <rect key="frame" x="22.5" y="298" width="330" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="rvx-fT-cFd"/>
+                                </constraints>
+                                <string key="text">Sinopse é uma descrição sintética da ideia do filme. Deve deixar claro o que será abordado no documentário, quem são as personagens e  onde se passa, também pode trazer, sucintamente, por que é importante contar aquela história. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzA-No-lqP">
+                                <rect key="frame" x="145" y="488" width="85" height="30"/>
+                                <state key="normal" title="Para Assistir"/>
+                                <connections>
+                                    <action selector="paraAssistir:" destination="gKr-sD-IbJ" eventType="touchUpInside" id="khU-Mf-VHT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dtp-0c-k7i"/>
+                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DzA-No-lqP" firstAttribute="centerX" secondItem="4cX-Pe-Ake" secondAttribute="centerX" id="00L-Cr-x5c"/>
+                            <constraint firstItem="bFR-tM-7BA" firstAttribute="leading" secondItem="Dtp-0c-k7i" secondAttribute="leading" constant="22.5" id="C3d-7I-cBR"/>
+                            <constraint firstItem="Kgn-1c-vwo" firstAttribute="top" secondItem="bFR-tM-7BA" secondAttribute="bottom" constant="8" id="IL9-of-SUe"/>
+                            <constraint firstItem="bFR-tM-7BA" firstAttribute="top" secondItem="U1L-vm-Hbr" secondAttribute="bottom" constant="20" id="InD-Sw-EU7"/>
+                            <constraint firstItem="U1L-vm-Hbr" firstAttribute="leading" secondItem="Dtp-0c-k7i" secondAttribute="leading" constant="22.5" id="MFc-io-anF"/>
+                            <constraint firstItem="Dtp-0c-k7i" firstAttribute="trailing" secondItem="U1L-vm-Hbr" secondAttribute="trailing" constant="22.5" id="NDg-Qi-eja"/>
+                            <constraint firstItem="Dtp-0c-k7i" firstAttribute="trailing" secondItem="Kgn-1c-vwo" secondAttribute="trailing" constant="22.5" id="QxN-ZF-OQj"/>
+                            <constraint firstItem="Dtp-0c-k7i" firstAttribute="trailing" secondItem="bFR-tM-7BA" secondAttribute="trailing" constant="22.5" id="VtD-XV-9RP"/>
+                            <constraint firstItem="U1L-vm-Hbr" firstAttribute="top" secondItem="Dtp-0c-k7i" secondAttribute="top" constant="20" id="Z16-cH-qWK"/>
+                            <constraint firstItem="Kgn-1c-vwo" firstAttribute="leading" secondItem="Dtp-0c-k7i" secondAttribute="leading" constant="22.5" id="cQm-dh-8E2"/>
+                            <constraint firstItem="DzA-No-lqP" firstAttribute="top" secondItem="Kgn-1c-vwo" secondAttribute="bottom" constant="50" id="ffi-4V-Ohf"/>
+                            <constraint firstItem="U1L-vm-Hbr" firstAttribute="centerX" secondItem="4cX-Pe-Ake" secondAttribute="centerX" id="ssi-eJ-xqy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kzd-hW-b01"/>
+                    <connections>
+                        <outlet property="imagemFilme" destination="U1L-vm-Hbr" id="7cu-P5-PaA"/>
+                        <outlet property="nomeFilme" destination="bFR-tM-7BA" id="6rC-3T-0Um"/>
+                        <outlet property="sinopseFilme" destination="Kgn-1c-vwo" id="uSV-SV-eOT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SqQ-A1-EgM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7748" y="59"/>
         </scene>
         <!--Procurar Filmes-->
         <scene sceneID="vKh-oF-P5T">

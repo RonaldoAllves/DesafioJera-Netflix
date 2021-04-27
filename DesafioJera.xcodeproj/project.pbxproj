@@ -21,6 +21,7 @@
 		767CABED262FA82A005DBE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767CABEB262FA82A005DBE67 /* LaunchScreen.storyboard */; };
 		767CABF6262FA8DA005DBE67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 767CABF5262FA8DA005DBE67 /* GoogleService-Info.plist */; };
 		768A9B632634E74C00682627 /* DetalhesFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768A9B622634E74C00682627 /* DetalhesFilmeViewController.swift */; };
+		76CBF2F326387B0600D26AB6 /* DetalhesSugeridosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CBF2F226387B0600D26AB6 /* DetalhesSugeridosViewController.swift */; };
 		76E256AE26344D09003D6BAC /* BuscarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E256AD26344D09003D6BAC /* BuscarViewController.swift */; };
 		76F36FE82635B46F009FA88C /* AssistidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F36FE72635B46F009FA88C /* AssistidosViewController.swift */; };
 		76F36FF02635B4FB009FA88C /* FuncoesAPI_Filmes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F36FEF2635B4FB009FA88C /* FuncoesAPI_Filmes.swift */; };
@@ -49,6 +50,7 @@
 		767CABEE262FA82A005DBE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		767CABF5262FA8DA005DBE67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		768A9B622634E74C00682627 /* DetalhesFilmeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesFilmeViewController.swift; sourceTree = "<group>"; };
+		76CBF2F226387B0600D26AB6 /* DetalhesSugeridosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesSugeridosViewController.swift; sourceTree = "<group>"; };
 		76E256AD26344D09003D6BAC /* BuscarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarViewController.swift; sourceTree = "<group>"; };
 		76F36FE72635B46F009FA88C /* AssistidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistidosViewController.swift; sourceTree = "<group>"; };
 		76F36FEF2635B4FB009FA88C /* FuncoesAPI_Filmes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncoesAPI_Filmes.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				765F1DD626322D1C00B9DA51 /* CadastroViewController.swift */,
 				768A9B622634E74C00682627 /* DetalhesFilmeViewController.swift */,
 				766998E726383EA3004D1B3C /* DetalhesParaAssistirViewController.swift */,
+				76CBF2F226387B0600D26AB6 /* DetalhesSugeridosViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				766C774326339E7500670FBD /* BuscarTableViewCell.swift in Sources */,
 				76F36FF32635BE19009FA88C /* Funcoes_Firebase.swift in Sources */,
 				76F36FF02635B4FB009FA88C /* FuncoesAPI_Filmes.swift in Sources */,
+				76CBF2F326387B0600D26AB6 /* DetalhesSugeridosViewController.swift in Sources */,
 				76F79D4B2637A0C80063045A /* Alertas.swift in Sources */,
 				763C1A5C26326280003B7A64 /* PerfisViewController.swift in Sources */,
 				767CABE1262FA827005DBE67 /* AppDelegate.swift in Sources */,

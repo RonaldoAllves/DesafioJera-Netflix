@@ -13,8 +13,6 @@ import FirebaseUI
 
 class SugeridosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
     let funcoes_firebase = Funcoes_Firebase()
     let funcoes_API = FuncoesAPI_Filmes()
     
@@ -92,6 +90,32 @@ class SugeridosViewController: UIViewController, UITableViewDelegate, UITableVie
         
         return celula
         
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "segueSugeridosDetalhes"{
+            
+            if let indexPath = tableViewSugeridos.indexPathForSelectedRow{
+                
+                let indice = indexPath.row
+                
+                let filme = resultadosBuscaFilmes[indice] as! [String: Any]
+                //print("\n\nid_filme:\n\(id_filme)")
+                //let filme = funcoes_API.buscarFilmePeloID(id: id_filme as! Int)!
+                
+                let viewControllerDestinoDetalhesFilme = segue.destination as! DetalhesSugeridosViewController
+
+                viewControllerDestinoDetalhesFilme.idFilme = self.funcoes_API.obterIDFilme(filme: filme )
+                viewControllerDestinoDetalhesFilme.nome = self.funcoes_API.obterNomeFilme(filme: filme)
+                viewControllerDestinoDetalhesFilme.sinopse = self.funcoes_API.obterSinopseFilme(filme: filme)
+                viewControllerDestinoDetalhesFilme.imagem = self.funcoes_API.obterImagemFilme(filme: filme)
+                viewControllerDestinoDetalhesFilme.generos = self.funcoes_API.obterGeneroFilme(filme: filme)
+                
+            }
+            
+        }
     }
 
 }
