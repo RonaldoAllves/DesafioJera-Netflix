@@ -67,7 +67,12 @@ class CadastroViewController: UIViewController {
                                         
                                         self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["FilmesParaAssistir" : Array<Any>()], merge: true)
                                 
-                                        self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["dono" : "sem dono"], merge: true)
+                                        
+                                        if i != 1{
+                                            self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["dono" : "sem dono"], merge: true)
+                                        }else{
+                                            self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["dono" : nome], merge: true)
+                                        }
                                         
                                         
                                         

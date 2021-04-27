@@ -24,23 +24,4 @@ class Funcoes_Firebase {
         
     }
     
-    /*
-    func recuperarPerfil(completion: @escaping(DocumentSnapshot?)->()){
-        
-        inicializarObjetoAutenticacao()
-        
-        let usuariosRef = self.firestore.collection("usuarios").document(PerfisViewController.GlobalVariable.idAtual)
-        let perfisRef = usuariosRef.collection("Perfis")
-        var perfil = perfisRef.document("Perfil \(String(PerfisViewController.GlobalVariable.perfilAtul))")
-        
-        //var filmesAssistidos : Array<Any>!
-        
-        perfil.getDocument { (snapshotPerfil, erro) in
-            completion(snapshotPerfil)
-        }
-        
-        
-    }
-    */
-    
 }

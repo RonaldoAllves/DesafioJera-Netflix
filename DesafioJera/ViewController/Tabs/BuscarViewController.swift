@@ -50,9 +50,7 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 self.tableViewProcurarFilmes.reloadData()
             }
-            
         }
-
     }
     
     /*###################################################*/
@@ -83,7 +81,6 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return celula
         
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

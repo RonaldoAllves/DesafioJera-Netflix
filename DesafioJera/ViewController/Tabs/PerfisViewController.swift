@@ -307,20 +307,5 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
         static var perfilAtul: Int!
         static var idAtual: String!
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        /*
-        if segue.identifier == "segueMenu" {
-            
-            if let vcDestinoBuscar = segue.destination as? BuscarViewController{
-                vcDestinoBuscar.perfilAtual = self.perfilSelecionado
-                vcDestinoBuscar.idUsuarioAtual = self.idUsuario
-            }
-            
-        }
-        */
-        
-    }
 
 }

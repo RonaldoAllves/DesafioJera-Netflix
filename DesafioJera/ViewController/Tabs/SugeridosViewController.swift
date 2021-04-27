@@ -22,7 +22,6 @@ class SugeridosViewController: UIViewController, UITableViewDelegate, UITableVie
     var storage: Storage!
     var firestore: Firestore!
     
-    //var generoPrincipal : Int = 0
     var resultadosBuscaFilmes : Array<Any>!
     var totalFilmes : Int!
 
@@ -47,7 +46,6 @@ class SugeridosViewController: UIViewController, UITableViewDelegate, UITableVie
         perfil.getDocument { (snapshotPerfil, erro) in
             if let dadosPerfil = snapshotPerfil?.data(){
                 
-                //print(dadosPerfil)
                 let generosSalvos = dadosPerfil["GenerosDosFilmes"] as! [String:Int]
                 print(generosSalvos)
                 
@@ -65,7 +63,6 @@ class SugeridosViewController: UIViewController, UITableViewDelegate, UITableVie
                     
                     self.tableViewSugeridos.reloadData()
                 }
-                //self.tableViewAssistidos.reloadData()
             
             }
         }
