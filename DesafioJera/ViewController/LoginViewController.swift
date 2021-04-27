@@ -62,18 +62,20 @@ class LoginViewController: UIViewController {
                         }
                     }else{
                         if let er = erro{
-                            self.alerta.alertas(titulo: "Erro ao logar usuario", erro: er.localizedDescription)
-                            print("Erro ao logar usuario!") //Criar alerta
+                            let alertas = self.alerta.alertas(titulo: "Erro ao logar usuario", erro: er.localizedDescription)
+                            self.present(alertas, animated: true, completion: nil)
                         }
                         
                     }
                 }
                 
             }else{
-                self.alerta.alertas(titulo: "Erro de senha", erro: "Senha digitada de forma incorreta")
+                let alertas = self.alerta.alertas(titulo: "Erro de senha", erro: "Senha digitada de forma incorreta")
+                self.present(alertas, animated: true, completion: nil)
             }
         }else{
-            self.alerta.alertas(titulo: "Erro de email", erro: "Email digitado de forma incorreta")
+            let alertas = self.alerta.alertas(titulo: "Erro de email", erro: "Email digitado de forma incorreta")
+            self.present(alertas, animated: true, completion: nil)
         }
  
     }
@@ -85,7 +87,8 @@ class LoginViewController: UIViewController {
             
             if let erro = erro {
                 
-                self.alerta.alertas(titulo: "Erro ao fazer login com Facebook", erro: erro.localizedDescription)
+                let alertas = self.alerta.alertas(titulo: "Erro ao fazer login com Facebook", erro: erro.localizedDescription)
+                self.present(alertas, animated: true, completion: nil)
                 
             }else{
                 let acessoToken = AccessToken.current
@@ -95,7 +98,9 @@ class LoginViewController: UIViewController {
                 Auth.auth().signIn(with: credencial) { (usuario, erro) in
                     
                     if let erro = erro{
-                        print("\n\nLogin Erro: \(erro.localizedDescription)")
+                        //Alerta de erro ao entrar com o Facebook
+                        let alertas = self.alerta.alertas(titulo: "Erro ao logar com Facebook", erro: erro.localizedDescription)
+                        self.present(alertas, animated: true, completion: nil)
                     }else{
                         
                         if let dadosUsuario = usuario?.user{

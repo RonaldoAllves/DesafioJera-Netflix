@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 class DetalhesParaAssistirViewController: UIViewController {
     
-    let alerta = Alertas()
+    let alertas = Alertas()
 
     @IBOutlet weak var imagemFilme: UIImageView!
     @IBOutlet weak var tituloFilme: UILabel!
@@ -62,7 +62,10 @@ class DetalhesParaAssistirViewController: UIViewController {
                     
                     self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData(["FilmesParaAssistir":FieldValue.arrayRemove([idFilme])])
                     
-                    //Criar alerta informando que o filme foi adicionado
+                    if let nome = self.nome{
+                        let alerta = alertas.alertas(titulo: "Filme Adicionado na Lista de Assistidos", erro: "Adicionado o filme: \(nome)")
+                        present(alerta, animated: true, completion: nil)
+                    }
                     
                 }
                 

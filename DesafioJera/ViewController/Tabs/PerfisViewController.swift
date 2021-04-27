@@ -94,7 +94,8 @@ class PerfisViewController: UIViewController, UIImagePickerControllerDelegate, U
                 
             }else{
                 if let er = erro?.localizedDescription{
-                    self.alertas.alertas(titulo: "Erro ao obter dados do usuario", erro: er)
+                    let alerta = self.alertas.alertas(titulo: "Erro ao obter dados do usuario", erro: er)
+                    self.present(alerta, animated: true, completion: nil)
                 }
             }
             

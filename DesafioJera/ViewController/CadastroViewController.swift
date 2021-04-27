@@ -10,6 +10,8 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class CadastroViewController: UIViewController {
+    
+    let alertas = Alertas()
 
     @IBOutlet weak var campoEmail: UITextField!
     @IBOutlet weak var campoSenha: UITextField!
@@ -41,7 +43,7 @@ class CadastroViewController: UIViewController {
                     if let nascimento = campoDataNascimento.text{
                         
                         //Cria o usuario
-                        auth.createUser(withEmail: email, password: senha) { (dadosResultado, erro) in
+                        auth.createUser(withEmail: email, password: senha) { [self] (dadosResultado, erro) in
                             
                             //Verifica se houve erro ao cadastrar o usuario
                             if erro == nil{
@@ -74,16 +76,15 @@ class CadastroViewController: UIViewController {
                                             self.firestore.collection("usuarios").document(idUsuario).collection("Perfis").document(numeroPerfil).setData(["dono" : nome], merge: true)
                                         }
                                         
-                                        
-                                        
-                                        
                                     }
                                     
                                     
                                 }
                                 
                             }else{
-                                //Criar um alerta para apresentar o erro ao cadastrar usuario
+                                //Alerta de erro ao cadastrar usuario
+                                let alerta = self.alertas.alertas(titulo: "Erro no Cadastro", erro: erro!.localizedDescription)
+                                self.present(alerta, animated: true, completion: nil)
                             }
                             
                         }
