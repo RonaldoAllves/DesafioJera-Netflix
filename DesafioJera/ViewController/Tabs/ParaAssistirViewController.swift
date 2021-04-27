@@ -100,17 +100,7 @@ class ParaAssistirViewController: UIViewController, UITableViewDelegate, UITable
                 viewControllerDestinoDetalhesFilme.nome = self.funcoes_API.obterNomeFilme(filme: filme)
                 viewControllerDestinoDetalhesFilme.sinopse = self.funcoes_API.obterSinopseFilme(filme: filme)
                 viewControllerDestinoDetalhesFilme.imagem = self.funcoes_API.obterImagemFilme(filme: filme)
-                
-                //print(filme)
-                if let gen = self.funcoes_API.obterGeneroFilmeDoId(filme: filme){
-                    viewControllerDestinoDetalhesFilme.generos = gen
-                    
-                    //print(gen)
-                    
-                }else{
-                    print("\n\nErro Genero")
-                    alerta.alertas(titulo: "Genero", erro: "Erro ao obter genero")
-                }
+                viewControllerDestinoDetalhesFilme.generos = self.funcoes_API.obterGeneroFilmeDoId(filme: filme)
                 
             }
             

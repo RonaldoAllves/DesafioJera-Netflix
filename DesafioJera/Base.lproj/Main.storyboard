@@ -536,7 +536,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceG-I5-bas">
-                                <rect key="frame" x="123" y="452.5" width="129" height="30"/>
+                                <rect key="frame" x="123" y="487.5" width="129" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1PR-AQ-Ctj"/>
                                     <constraint firstAttribute="width" constant="129" id="8vU-aO-78N"/>
@@ -546,24 +546,12 @@
                                     <action selector="assistirMaisTarde:" destination="HxV-df-Akm" eventType="touchUpInside" id="YbL-ai-dEh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQp-z9-gf2">
-                                <rect key="frame" x="146.5" y="502.5" width="82" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="82" id="ELJ-y6-Cvk"/>
-                                    <constraint firstAttribute="height" constant="30" id="I0e-Oj-GHA"/>
-                                </constraints>
-                                <state key="normal" title="Já Assistido"/>
-                                <connections>
-                                    <action selector="jaAssistido:" destination="HxV-df-Akm" eventType="touchUpInside" id="ZzL-7a-usb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nwZ-oD-IFX"/>
                         <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="V6O-9C-up2" firstAttribute="leading" secondItem="nwZ-oD-IFX" secondAttribute="leading" constant="22.5" id="2rW-Nl-iel"/>
-                            <constraint firstItem="EQp-z9-gf2" firstAttribute="centerX" secondItem="3Rl-Yf-rHi" secondAttribute="centerX" id="3fe-bQ-Ixw"/>
-                            <constraint firstItem="ceG-I5-bas" firstAttribute="top" secondItem="Jcj-T1-mnG" secondAttribute="bottom" constant="15" id="5WQ-zk-QuZ"/>
+                            <constraint firstItem="ceG-I5-bas" firstAttribute="top" secondItem="Jcj-T1-mnG" secondAttribute="bottom" constant="50" id="5WQ-zk-QuZ"/>
                             <constraint firstItem="Jcj-T1-mnG" firstAttribute="top" secondItem="V6O-9C-up2" secondAttribute="bottom" constant="8" id="8a4-da-oif"/>
                             <constraint firstItem="wSr-Tr-epI" firstAttribute="centerX" secondItem="3Rl-Yf-rHi" secondAttribute="centerX" id="AUK-Jy-8Rg"/>
                             <constraint firstItem="wSr-Tr-epI" firstAttribute="leading" secondItem="nwZ-oD-IFX" secondAttribute="leading" constant="22.5" id="KnE-H9-Leb"/>
@@ -572,7 +560,6 @@
                             <constraint firstItem="ceG-I5-bas" firstAttribute="centerX" secondItem="3Rl-Yf-rHi" secondAttribute="centerX" id="Pme-dZ-c6l"/>
                             <constraint firstItem="wSr-Tr-epI" firstAttribute="top" secondItem="nwZ-oD-IFX" secondAttribute="top" constant="20" id="Zuy-er-eQw"/>
                             <constraint firstItem="V6O-9C-up2" firstAttribute="top" secondItem="wSr-Tr-epI" secondAttribute="bottom" constant="20" id="fMo-aT-uME"/>
-                            <constraint firstItem="EQp-z9-gf2" firstAttribute="top" secondItem="ceG-I5-bas" secondAttribute="bottom" constant="20" id="hLQ-SV-zBr"/>
                             <constraint firstItem="nwZ-oD-IFX" firstAttribute="trailing" secondItem="wSr-Tr-epI" secondAttribute="trailing" constant="22.5" id="r3G-ra-sbA"/>
                             <constraint firstItem="V6O-9C-up2" firstAttribute="centerX" secondItem="3Rl-Yf-rHi" secondAttribute="centerX" id="tvo-7I-uAe"/>
                             <constraint firstItem="Jcj-T1-mnG" firstAttribute="leading" secondItem="nwZ-oD-IFX" secondAttribute="leading" constant="22.5" id="xAN-ns-Sn2"/>

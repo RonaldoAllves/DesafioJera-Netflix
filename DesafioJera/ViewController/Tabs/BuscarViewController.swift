@@ -92,8 +92,6 @@ class BuscarViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 let filme = resultados[indice] as! [String:Any]
                 
-                print(filme)
-                
                 let viewControllerDestinoDetalhesFilme = segue.destination as! DetalhesFilmeViewController
 
                 viewControllerDestinoDetalhesFilme.idFilme = self.funcoesAPI.obterIDFilme(filme: filme)

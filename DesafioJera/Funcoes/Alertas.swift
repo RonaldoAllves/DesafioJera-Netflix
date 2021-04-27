@@ -9,11 +9,11 @@ import UIKit
 
 class Alertas: UIViewController {
     
-    func alertas(titulo:String, erro: String){
+    func alertas(titulo:String, erro: String) -> UIAlertController{
         let alertaController = UIAlertController(title: titulo, message: erro, preferredStyle: .alert)
         let okayAcao = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertaController.addAction(okayAcao)
-        self.present(alertaController, animated: true, completion: nil)
+        return alertaController
     }
     
 }

@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 class DetalhesFilmeViewController: UIViewController {
     
+    let alertas = Alertas()
+    
     @IBOutlet weak var imagemFilme: UIImageView!
     @IBOutlet weak var tituloFilme: UILabel!
     @IBOutlet weak var sinopseFilme: UILabel!
@@ -55,8 +57,11 @@ class DetalhesFilmeViewController: UIViewController {
                         let campo = "GenerosDosFilmes." + String(genero)
                         self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([campo : FieldValue.increment(Int64(1))])
                     }
+                    if let nome = self.nome{
+                        let alerta = alertas.alertas(titulo: "Filme Adicionado", erro: "Adicionado o filme: \(nome)")
+                        present(alerta, animated: true, completion: nil)
+                    }
                     
-                    //criar aletar infomando que o filme foi adicionado
                 }
             }
             
@@ -64,31 +69,5 @@ class DetalhesFilmeViewController: UIViewController {
         
     }
     
-    @IBAction func jaAssistido(_ sender: Any) {
-        
-        if let perfilAtual = PerfisViewController.GlobalVariable.perfilAtul{
-            
-            if let idUsuarioAtual = PerfisViewController.GlobalVariable.idAtual{
-            
-                let perfil = "Perfil \(String(describing: perfilAtual))"
-                
-                if let idFilme = self.idFilme{
-                
-                    self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData(["FilmesAssistidos":FieldValue.arrayUnion([idFilme])])
-
-                    
-                    for genero in generos{
-                        let campo = "GenerosDosFilmes." + String(genero)
-                        self.firestore.collection("usuarios").document(idUsuarioAtual).collection("Perfis").document(perfil).updateData([campo : FieldValue.increment(Int64(1))])
-                    }
-                    //Criar alerta informando que o filme foi adicionado
-                    
-                }
-                
-            }
-            
-        }
-        
-    }
     
 }
